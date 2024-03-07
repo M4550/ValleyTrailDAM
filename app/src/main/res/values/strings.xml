@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Valley Trail</string>
+
+    <!-- Strings Registro-->
+    <string name="registerBtn">Registrarse</string>
+    <string name="enterBtn">Entrar</string>
+    <string name="enterNoLoginBtn">Entrar sin registro</string>
+    <string name="registerName">Nombre</string>
+    <string name="registerSurname">Apellido</string>
+    <string name="registerPhone">Teléfono</string>
+    <string name="registerAddress">Direccion completa</string>
+    <string name="registerNif">DNI</string>
+    <string name="registerEmail">Email</string>
+    <string name="registerPass">Contraseña</string>
+    <string name="registerCheckPass">Repite la contraseña</string>
+    <string name="datePicker">Fecha de nacimiento</string>
+    <string name="tv1">Completa los campos para registrarte</string>
+    <string name="btnSave">Registrarse</string>
+
+    <!-- Strings UserHome-->
+    <string name="uhTitle">Mi cuenta</string>
+
+
+
+
+
+    <!--Strings Calendario-->
+    <string name="sunday">Domingo</string>
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sábado</string>
+
+    <string-array name="months_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+    <string name="title_activity_user_home">UserHomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+</resources>

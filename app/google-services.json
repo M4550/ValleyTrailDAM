@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "137872133912",
+    "project_id": "valley-trail-dam",
+    "storage_bucket": "valley-trail-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137872133912:android:7f755f156c38079bfcd86d",
+        "android_client_info": {
+          "package_name": "com.amm.valleytraildam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQLxi4x4iNuiEQZtU_v8Axa1CxgT-Wdwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
