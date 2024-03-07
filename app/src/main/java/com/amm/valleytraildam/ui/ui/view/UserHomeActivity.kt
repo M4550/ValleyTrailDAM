@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.view
+package com.amm.valleytraildam.ui.ui.view
 
 import android.os.Bundle
 

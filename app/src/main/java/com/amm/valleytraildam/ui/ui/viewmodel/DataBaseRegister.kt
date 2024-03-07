@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.viewmodel
+package com.amm.valleytraildam.ui.ui.viewmodel
 
 import android.content.Context
 import android.content.Intent
@@ -6,10 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.view.UserHomeActivity
+import com.amm.valleytraildam.ui.ui.view.UserHomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.Delay
 
 class DataBaseRegister {
     companion object {

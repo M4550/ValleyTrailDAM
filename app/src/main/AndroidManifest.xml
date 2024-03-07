@@ -15,16 +15,16 @@
 
 
         <activity
-            android:name=".view.SignupActivity"
+            android:name=".ui.ui.view.SignupActivity"
             android:exported="false"
             android:theme="@style/Theme.ValleyTrailDAM.NoActionBar" />
 
         <activity
-            android:name=".view.UserHomeActivity"
+            android:name=".ui.ui.view.UserHomeActivity"
             android:exported="false"
             android:theme="@style/Theme.ValleyTrailDAM.NoActionBar" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".ui.ui.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

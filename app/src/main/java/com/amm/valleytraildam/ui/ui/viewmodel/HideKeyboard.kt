@@ -1,9 +1,8 @@
-package com.amm.valleytraildam.viewmodel
+package com.amm.valleytraildam.ui.ui.viewmodel
 
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.AdapterView
 
 class HideKeyboard {
     companion object {
