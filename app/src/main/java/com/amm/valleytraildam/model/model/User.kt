@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.model
+package com.amm.valleytraildam.model.model
 
 data class User (
     var bornDate: String? = "",

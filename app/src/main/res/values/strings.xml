@@ -21,34 +21,22 @@
     <string name="uhTitle">Mi cuenta</string>
 
 
+    <!-- Strings Login-->
 
-
-
-    <!--Strings Calendario-->
-    <string name="sunday">Domingo</string>
-    <string name="monday">Lunes</string>
-    <string name="tuesday">Martes</string>
-    <string name="wednesday">Miércoles</string>
-    <string name="thursday">Jueves</string>
-    <string name="friday">Viernes</string>
-    <string name="saturday">Sábado</string>
-
-    <string-array name="months_array">
-        <item>Enero</item>
-        <item>Febrero</item>
-        <item>Marzo</item>
-        <item>Abril</item>
-        <item>Mayo</item>
-        <item>Junio</item>
-        <item>Julio</item>
-        <item>Agosto</item>
-        <item>Septiembre</item>
-        <item>Octubre</item>
-        <item>Noviembre</item>
-        <item>Diciembre</item>
-    </string-array>
     <string name="title_activity_user_home">UserHomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Acceder</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="loginPassword">Contraseña</string>
+    <string name="loginEmail">Email</string>
+    <string name="navigation_drawer_open">DrawerOpen\n</string>
+    <string name="navigation_drawer_close">DrawerClose</string>
+    <string name="invalid_username">E</string>
 
 </resources>

@@ -1,12 +1,12 @@
-package com.amm.valleytraildam.ui.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel
 
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
-import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.ui.view.UserHomeActivity
+import com.amm.valleytraildam.model.model.User
+import com.amm.valleytraildam.ui.view.UserHomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

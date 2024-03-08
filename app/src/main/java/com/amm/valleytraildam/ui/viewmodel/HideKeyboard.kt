@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel
 
 import android.content.Context
 import android.view.View

@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.ui.view
+package com.amm.valleytraildam.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,11 +6,11 @@ import android.util.Log
 import android.widget.Toast
 
 import com.amm.valleytraildam.databinding.ActivityRegisterBinding
-import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.ui.viewmodel.CheckUserInfo
-import com.amm.valleytraildam.ui.ui.viewmodel.DataBaseRegister
-import com.amm.valleytraildam.ui.ui.viewmodel.HideKeyboard
-import com.amm.valleytraildam.ui.ui.viewmodel.ShowDatePicker
+import com.amm.valleytraildam.model.model.User
+import com.amm.valleytraildam.ui.viewmodel.CheckUserInfo
+import com.amm.valleytraildam.ui.viewmodel.DataBaseRegister
+import com.amm.valleytraildam.ui.viewmodel.HideKeyboard
+import com.amm.valleytraildam.ui.viewmodel.ShowDatePicker
 import java.util.Calendar
 
 class SignupActivity : AppCompatActivity() {
@@ -24,6 +24,7 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val calendar: Calendar = Calendar.getInstance()
+        supportActionBar?.hide()
 
         binding.datePickerBtn.setOnClickListener {
             ShowDatePicker.showDatePicker(this, binding.root) { formattedDate ->
