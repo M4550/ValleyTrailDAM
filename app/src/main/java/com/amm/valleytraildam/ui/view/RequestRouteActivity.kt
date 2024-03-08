@@ -10,13 +10,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityRequestRouteBinding
 import com.amm.valleytraildam.model.model.Route
 import com.amm.valleytraildam.model.model.User
-import com.amm.valleytraildam.ui.viewmodel.CheckRouteAvailability
+import com.amm.valleytraildam.ui.viewmodel.AddRequestedRoute
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
@@ -30,7 +31,7 @@ class RequestRouteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRequestRouteBinding
     private var participantNumber: Int = 1
-
+    private var date: String = ""
     private var isAvailable: Boolean = false
     private lateinit var user: User
     private var normalizedEmail = ""
@@ -69,7 +70,7 @@ class RequestRouteActivity : AppCompatActivity() {
 
             val db = FirebaseFirestore.getInstance()
 
-            val date = "$dayOfMonth-$month-$year"
+            date = "$dayOfMonth-$month-$year"
 
 
             CoroutineScope(Dispatchers.IO).launch {
@@ -94,31 +95,43 @@ class RequestRouteActivity : AppCompatActivity() {
                     binding.btnSave.visibility = View.VISIBLE
 
                     if (activeRoute?.date != null) {
+                        Log.i("Info DB", "ActiveRoute data: $activeRoute")
+                        Log.i("Info DB", "ActiveRoute data: ${activeRoute.maxParticipants}")
+                        Log.i("Info DB", "ActiveRoute data: ${activeRoute.participants}")
+
+                        if (
+                            activeRoute.participants!! >= activeRoute.maxParticipants!!
+                        ) {
 
 
-                        binding.btnSave.visibility = View.GONE
-                        binding.tvAvailability.text = getString(R.string.ruta_llena)
-                        binding.seekBar.visibility = View.GONE
-                        binding.tvAvailability.setBackgroundColor(Color.RED)
-
-                        if (activeRoute.users!!.contains(normalizedEmail)) {
                             binding.btnSave.visibility = View.GONE
-                            binding.tvAvailability.text =
-                                getString(R.string.ya_est_s_inscrito_en_esta_ruta)
+                            binding.tvAvailability.text = getString(R.string.ruta_llena)
                             binding.seekBar.visibility = View.GONE
-                            binding.tvAvailability.setBackgroundColor(Color.LTGRAY)
+                            binding.tvAvailability.setBackgroundColor(Color.RED)
                         } else {
-                            val freePlaces =
-                                activeRoute.maxParticipants!! - activeRoute.participants!!
-                            binding.tvAvailability.text = "Ruta con $freePlaces plazas libres"
-                            binding.tvAvailability.setBackgroundColor(Color.YELLOW)
-                            binding.btnSave.visibility = View.VISIBLE
-                            dateMaxParticipants = activeRoute.maxParticipants!!
-                            binding.seekBar.visibility = View.VISIBLE
-                            binding.seekBar.max = freePlaces
+
+
+                            if (activeRoute.users!!.contains(normalizedEmail)) {
+
+                                Log.i("Info DB", "ActiveRoute data: $normalizedEmail")
+                                binding.btnSave.visibility = View.GONE
+                                binding.tvAvailability.text =
+                                    getString(R.string.ya_est_s_inscrito_en_esta_ruta)
+                                binding.seekBar.visibility = View.GONE
+                                binding.tvAvailability.setBackgroundColor(Color.LTGRAY)
+
+                            } else {
+                                val freePlaces =
+                                    activeRoute.maxParticipants!! - activeRoute.participants!!
+                                binding.tvAvailability.text = "Ruta con $freePlaces plazas libres"
+                                binding.tvAvailability.setBackgroundColor(Color.YELLOW)
+                                binding.btnSave.visibility = View.VISIBLE
+                                dateMaxParticipants = activeRoute.maxParticipants!!
+                                binding.seekBar.visibility = View.VISIBLE
+                                binding.seekBar.max = freePlaces
+                            }
+
                         }
-
-
                     }
 
 
@@ -128,6 +141,22 @@ class RequestRouteActivity : AppCompatActivity() {
 
 
         }
+
+        binding.btnSave.setOnClickListener {
+            try {
+                AddRequestedRoute.addRequestedRoute(
+                    participantNumber,
+                    date,
+                    this,
+                    routeName = binding.tvTitle.text.toString()
+                )
+
+
+            } catch (e: Exception) {
+                Toast.makeText(this, "Ha habido un error", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
 
 
