@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="participants_array">
+
+        <item>1 persona</item>
+        <item>2 personas</item>
+        <item>3 personas</item>
+        <item>4 personas</item>
+        <item>5 personas</item>
+        <item>6 personas</item>
+        <item>7 personas</item>
+        <item>8 personas</item>
+        <item>9 personas</item>
+        <item>10 personas</item>
+
+    </string-array>
+</resources>

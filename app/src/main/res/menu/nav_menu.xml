@@ -3,12 +3,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_item1"
-            android:title="Contratar Rutas" />
+            android:title="Inicio" />
         <item
             android:id="@+id/nav_item2"
-            android:title="Mis Datos" />
+            android:title="Contratar Rutas" />
         <item
             android:id="@+id/nav_item3"
+            android:title="Mi Cuenta"
+            />
+        <item
+            android:id="@+id/nav_item4"
             android:title="Contacto"
             />
     </group>

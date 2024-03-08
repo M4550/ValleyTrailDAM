@@ -8,8 +8,8 @@ data class User (
     var name : String? = "",
     var phone: String? = "",
     var surname: String? = "",
-    var currentRoutes : ArrayList<String>? = arrayListOf(),
-    var pastRoutes : ArrayList<String>? = arrayListOf(),
+    var currentRoutes : ArrayList<String>? = arrayListOf(""),
+    var pastRoutes : ArrayList<String>? = arrayListOf(""),
     val isAdmin: Boolean? = false,
     var address: String? = ""
 )

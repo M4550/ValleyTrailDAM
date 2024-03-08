@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.AvailableRoutesActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/md_theme_dark_inversePrimary"
+                android:elevation="10dp"
+                android:focusable="true"
+
+                app:cardCornerRadius="45dp">
+
+                <ImageView
+                    android:id="@+id/congostoCard"
+
+                    android:layout_width="500dp"
+                    android:layout_height="290dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/im_cong_main"
+                     />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/md_theme_dark_inversePrimary"
+                    android:padding="2dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowRadius="14"
+                    android:text="@string/a_traves_del_congosto"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/md_theme_dark_inversePrimary"
+
+                android:elevation="10dp"
+                android:focusable="true"
+                app:cardCornerRadius="45dp">
+
+                <ImageView
+                    android:layout_width="500dp"
+                    android:id="@+id/ancestralesCard"
+
+                    android:layout_height="290dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/im_ancestrales_main" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/md_theme_dark_inversePrimary"
+                    android:padding="2dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowRadius="14"
+
+                    android:text="@string/caminos_ancestrales"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/md_theme_dark_inversePrimary"
+
+                android:elevation="10dp"
+                app:cardCornerRadius="45dp">
+
+                <ImageView
+                    android:id="@+id/civilCard"
+                    android:layout_width="500dp"
+                    android:layout_height="290dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/im_civ_main" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="@color/md_theme_dark_inversePrimary"
+                    android:padding="2dp"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="10"
+                    android:shadowRadius="14"
+                    android:text="@string/civilizaciones_pasadas"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

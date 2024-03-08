@@ -38,5 +38,29 @@
     <string name="navigation_drawer_open">DrawerOpen\n</string>
     <string name="navigation_drawer_close">DrawerClose</string>
     <string name="invalid_username">E</string>
+    <string name="logouttext">Cerrar Sesión</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="a_traves_del_congosto">A través del Congosto</string>
+    <string name="caminos_ancestrales">Caminos Ancestrales</string>
+    <string name="civilizaciones_pasadas">Civilizaciones Pasadas</string>
+
+    <string name="anc_user_info_card">Dificultad: Facil \nDistancia: 11,2 Kms \nDuración: 5h 30min</string>
+    <string name="anc_description">Circular al pueblo deshabitado de Bolturina pasando por el Santuario de Torreciudad desde Secastilla.</string>
+
+    <string name="civ_user_info_card">Dificultad: Media \nDistancia: 14,7 Kms \nDuración: 7h 30min</string>
+    <string name="civ_description">Circular al pueblo de Bolturina por yacimiento  romano de Labitolosa desde Secastilla.  </string>
+
+    <string name="cong_user_info_card">Dificultad: Media \nDistancia: 13,8 Kms \nDuración: 6h</string>
+    <string name="cong_description">Circular al pueblo de Olvena atravesando el congosto con salida desde  La Puebla de Castro.</string>
+    <string name="numero_participantes">Número de participantes</string>
+    <string name="disponibilidad">Disponibilidad</string>
+    <string name="selecciona_una_fecha_para_comprobar_la_disponibilidad">Selecciona una fecha para comprobar la disponibilidad</string>
+    <string name="disponible">Disponible</string>
+    <string name="ruta_llena">Ruta llena</string>
+    <string name="ya_est_s_inscrito_en_esta_ruta">Ya estás inscrito en esta ruta</string>
+
 
 </resources>

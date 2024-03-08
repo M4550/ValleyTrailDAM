@@ -30,6 +30,14 @@
                 android:background="#00FFFFFF"
                 android:layout_height="50dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entre el Ésera y el Cinca"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textAlignment="center"/>
+
 
         </androidx.appcompat.widget.Toolbar>
 
