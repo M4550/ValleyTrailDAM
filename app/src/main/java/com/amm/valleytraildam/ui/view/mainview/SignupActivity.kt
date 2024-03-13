@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.mainview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,12 +6,13 @@ import android.util.Log
 import android.widget.Toast
 
 import com.amm.valleytraildam.databinding.ActivityRegisterBinding
-import com.amm.valleytraildam.model.model.User
+import com.amm.valleytraildam.model.User
 import com.amm.valleytraildam.ui.viewmodel.CheckUserInfo
 import com.amm.valleytraildam.ui.viewmodel.DataBaseRegister
 import com.amm.valleytraildam.ui.viewmodel.HideKeyboard
 import com.amm.valleytraildam.ui.viewmodel.ShowDatePicker
 import java.util.Calendar
+
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

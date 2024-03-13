@@ -59,8 +59,24 @@
     <string name="disponibilidad">Disponibilidad</string>
     <string name="selecciona_una_fecha_para_comprobar_la_disponibilidad">Selecciona una fecha para comprobar la disponibilidad</string>
     <string name="disponible">Disponible</string>
-    <string name="ruta_llena">Ruta llena</string>
+    <string name="no_disponible">No disponible</string>
     <string name="ya_est_s_inscrito_en_esta_ruta">Ya estás inscrito en esta ruta</string>
+    <string name="inicio">Inicio</string>
+    <string name="contratar_rutas">Contratar Rutas</string>
+    <string name="mi_cuenta">Mi Cuenta</string>
+    <string name="contacto">Contacto</string>
+    <string name="contacto_email">Email</string>
+    <string name="contacto_telefono">Telefono</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="calendario_de_rutas">Calendario de rutas</string>
+    <string name="bloquear_dia">Bloquear dia</string>
+    <string name="introduce_tus_datos_de_acceso">Introduce tus datos de acceso</string>
+    <string name="historial">Historial</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="olvid_mi_contrase_a">Olvidé mi contraseña</string>
+    <string name="acceder">Acceder</string>
+    <string name="bienvenid">Bienvenid@</string>
+    <string name="mis_rutas">Mis Rutas</string>
 
 
 </resources>

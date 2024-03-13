@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.model.model
+package com.amm.valleytraildam.model
 
 data class Route (
     var date: String? = "",
@@ -7,5 +7,6 @@ data class Route (
     var routeName: String? = "",
     var time : String? = "",
     var users: ArrayList<String>? = arrayListOf(""),
-    var isActive: Boolean? = false
+    var isActive: Boolean? = false,
+    var isBloqued: Boolean? = false
 )

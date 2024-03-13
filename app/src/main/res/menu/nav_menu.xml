@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/nav_item1"
-            android:title="Inicio" />
+            android:title="@string/inicio" />
         <item
             android:id="@+id/nav_item2"
-            android:title="Contratar Rutas" />
+            android:title="@string/contratar_rutas" />
         <item
             android:id="@+id/nav_item3"
-            android:title="Mi Cuenta"
-            />
-        <item
-            android:id="@+id/nav_item4"
-            android:title="Contacto"
-            />
+            android:title="@string/mi_cuenta" />
     </group>
+
+
+    <item android:title="@string/contacto">
+        <menu>
+
+            <item
+
+                android:id="@+id/nav_item4"
+                android:title="@string/contacto_email" />
+            <item
+                android:id="@+id/nav_item5"
+                android:title="@string/contacto_telefono" />
+
+        </menu>
+
+    </item>
+
+
 </menu>

@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.amm.valleytraildam.ui.view.UserHomeActivity
+import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,6 +18,7 @@ class AddRequestedRoute {
             val db = FirebaseFirestore.getInstance()
             val user = FirebaseAuth.getInstance().currentUser
             val userEmail = user?.email
+            val time = "10:00h"
 
             db.collection("active_routes").document(date).get()
                 .addOnSuccessListener { documentSnapshot ->
@@ -37,6 +38,7 @@ class AddRequestedRoute {
                                 "Apuntado correctamente a la ruta",
                                 Toast.LENGTH_SHORT
                             ).show()
+
                             if (userEmail != null) {
                                 addRouteToUser(userEmail, date, db)
 
@@ -62,7 +64,7 @@ class AddRequestedRoute {
                             ).show()
                         }
                     } else {
-                        if (usersNumber <= 10) {
+
                             db.collection("active_routes").document(date).set(
                                 hashMapOf(
                                     "routeName" to routeName,
@@ -70,7 +72,11 @@ class AddRequestedRoute {
                                     "time" to "10:00 Horas",
                                     "participants" to usersNumber,
                                     "max_participants" to 12,
-                                    "users" to arrayListOf(userEmail.toString())
+                                    "users" to arrayListOf(userEmail.toString()),
+                                    "isActive" to true,
+                                    "time" to time,
+                                    "isBloqued" to false
+
                                 )
                             )
                             Toast.makeText(
@@ -96,13 +102,7 @@ class AddRequestedRoute {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "El número de participantes no puede superar 12 en una nueva ruta",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+
                     }
 
                 }

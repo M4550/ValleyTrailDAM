@@ -1,18 +1,14 @@
 package com.amm.valleytraildam.ui.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.amm.valleytraildam.model.Route
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import androidx.lifecycle.viewModelScope
-import com.amm.valleytraildam.model.model.User
+import com.amm.valleytraildam.model.User
 
 class UserDataViewModel : ViewModel() {
     suspend fun getUserData(): User? {
@@ -28,5 +24,9 @@ class UserDataViewModel : ViewModel() {
             }
         }
     }
+
+
+
+
 
 }

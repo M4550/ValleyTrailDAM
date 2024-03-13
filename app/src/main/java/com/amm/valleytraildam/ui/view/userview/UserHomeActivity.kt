@@ -1,21 +1,19 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.userview
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.PorterDuff
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityUserHomeBinding
 
@@ -28,7 +26,7 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private lateinit var binding: ActivityUserHomeBinding
     private lateinit var iconToolbar: ImageButton
     private lateinit var bindingToolbar: AppToolbarBinding
-
+    val fragmentManager = supportFragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,6 +37,7 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         drawer = binding.drawerLayout
         navigationView = binding.navView
         iconToolbar = binding.imIconToolbar
+        loadFragment(fragment = UserHomeFragment())
 
         iconToolbar.setOnClickListener {
             Toast.makeText(this, "Icono clickeado", Toast.LENGTH_SHORT).show()
@@ -59,9 +58,10 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         )
 
         drawer.addDrawerListener(toggle)
+
         toggle.syncState()
 
-        // Configurar acciones cuando el DrawerLayout se abre o se cierra
+
         drawer.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
 
@@ -80,17 +80,17 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             // Manejar clics en los elementos del menú
             when (menuItem.itemId) {
                 R.id.nav_item1 -> {
-                    drawer.closeDrawer(navigationView)
+                    loadFragment(fragment = UserHomeFragment())
 
+                    drawer.closeDrawer(navigationView)
 
 
                 }
 
                 R.id.nav_item2 -> {
                     val intent = Intent(this, AvailableRoutesActivity::class.java)
+                    intent.putExtra("isLogged", true)
                     startActivity(intent)
-
-
 
 
                 }
@@ -100,27 +100,47 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     drawer.closeDrawer(navigationView)
 
                 }
+
                 R.id.nav_item4 -> {
 
-                        // Dirección de correo electrónico a la que se enviará el correo electrónico
-                        val emailAddress = "lucia@eseraycinca.com"
+                    // Dirección de correo electrónico a la que se enviará el correo electrónico
+                    val emailAddress = "luciamalo98@gmail.com"
 
-                        // Crea un intent para abrir la aplicación de correo electrónico predeterminada
-                        val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                            // Especifica el destinatario
-                            data = Uri.parse("mailto:$emailAddress")
-                        }
+                    // Crea un intent para abrir la aplicación de correo electrónico predeterminada
+                    val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                        // Especifica el destinatario
+                        data = Uri.parse("mailto:$emailAddress")
+                    }
 
-                        // Verifica si hay una aplicación de correo electrónico disponible para manejar el intent
-                        if (emailIntent.resolveActivity(packageManager) != null) {
-                            // Abre la aplicación de correo electrónico predeterminada
-                            startActivity(emailIntent)
-                        } else {
-                            // Si no hay ninguna aplicación de correo electrónico disponible, muestra un mensaje al usuario
-                            Toast.makeText(this, "No se encontró ninguna aplicación de correo electrónico", Toast.LENGTH_SHORT).show()
-                        }
+                    // Verifica si hay una aplicación de correo electrónico disponible para manejar el intent
+                    if (emailIntent.resolveActivity(packageManager) != null) {
+                        // Abre la aplicación de correo electrónico predeterminada
+                        startActivity(emailIntent)
+                    } else {
+                        // Si no hay ninguna aplicación de correo electrónico disponible, muestra un mensaje al usuario
+                        Toast.makeText(
+                            this,
+                            "No se encontró ninguna aplicación de correo electrónico",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
 
+                }
 
+                R.id.nav_item5 -> {
+                    val phoneNumber = 676864397
+
+                    val intent = Intent(Intent.ACTION_DIAL)
+                    intent.data = Uri.parse("tel:$phoneNumber")
+
+                    Log.i("TAG", "Intent: ${intent.resolveActivity(packageManager)}")
+
+                    if (intent.resolveActivity(packageManager) != null) {
+                        Toast.makeText(this, "LLamando", Toast.LENGTH_SHORT).show()
+                        // Iniciar la actividad de llamada
+                        startActivity(intent)
+                    }
+                    Toast.makeText(this, "No se pudo llamar", Toast.LENGTH_SHORT).show()
 
                 }
             }

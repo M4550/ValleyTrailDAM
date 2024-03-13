@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.amm.valleytraildam.ui.view.UserHomeActivity
-import com.amm.valleytraildam.ui.view.AdminHomeActivity
+import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
+import com.amm.valleytraildam.ui.view.adminview.AdminHomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class Login {
@@ -15,6 +15,9 @@ class Login {
         fun loginUser(email: String, password: String, context: Context) {
 
             Log.i("Login", "$email, $password")
+
+
+
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener {

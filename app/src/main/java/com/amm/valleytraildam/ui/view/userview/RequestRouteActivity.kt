@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.userview
 
 import android.content.Context
 import android.content.Intent
@@ -15,8 +15,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityRequestRouteBinding
-import com.amm.valleytraildam.model.model.Route
-import com.amm.valleytraildam.model.model.User
+import com.amm.valleytraildam.model.Route
+import com.amm.valleytraildam.model.User
 import com.amm.valleytraildam.ui.viewmodel.AddRequestedRoute
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -60,6 +60,7 @@ class RequestRouteActivity : AppCompatActivity() {
         binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
 
             binding.seekBar.progress = 0
+            binding.tvSelectedParticipants.text = "1"
 
             getDayOfWeek(year, month, dayOfMonth)
 
@@ -93,20 +94,21 @@ class RequestRouteActivity : AppCompatActivity() {
                     binding.seekBar.visibility = View.VISIBLE
                     binding.tvAvailability.setBackgroundColor(Color.GREEN)
                     binding.btnSave.visibility = View.VISIBLE
+                    binding.tvSelectedParticipants.visibility = View.VISIBLE
+                    binding.tvHint.visibility = View.VISIBLE
 
                     if (activeRoute?.date != null) {
-                        Log.i("Info DB", "ActiveRoute data: $activeRoute")
-                        Log.i("Info DB", "ActiveRoute data: ${activeRoute.maxParticipants}")
-                        Log.i("Info DB", "ActiveRoute data: ${activeRoute.participants}")
 
                         if (
-                            activeRoute.participants!! >= activeRoute.maxParticipants!!
+                            activeRoute.participants!! >= activeRoute.maxParticipants!! || activeRoute.routeName == "No disponible"
                         ) {
 
 
                             binding.btnSave.visibility = View.GONE
-                            binding.tvAvailability.text = getString(R.string.ruta_llena)
+                            binding.tvAvailability.text = getString(R.string.no_disponible)
                             binding.seekBar.visibility = View.GONE
+                            binding.tvSelectedParticipants.visibility = View.GONE
+                            binding.tvHint.visibility = View.GONE
                             binding.tvAvailability.setBackgroundColor(Color.RED)
                         } else {
 
@@ -118,6 +120,7 @@ class RequestRouteActivity : AppCompatActivity() {
                                 binding.tvAvailability.text =
                                     getString(R.string.ya_est_s_inscrito_en_esta_ruta)
                                 binding.seekBar.visibility = View.GONE
+                                binding.tvSelectedParticipants.text = activeRoute.participants.toString()
                                 binding.tvAvailability.setBackgroundColor(Color.LTGRAY)
 
                             } else {

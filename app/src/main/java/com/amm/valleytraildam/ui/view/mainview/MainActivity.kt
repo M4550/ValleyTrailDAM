@@ -1,9 +1,10 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.mainview
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.amm.valleytraildam.databinding.ActivityMainBinding
+import com.amm.valleytraildam.ui.view.userview.AvailableRoutesActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +24,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        binding.enterNoLoginBtn.setOnClickListener {
+            val intent = Intent(this, AvailableRoutesActivity::class.java)
+            intent.putExtra("noLogin", true)
+            startActivity( intent)
+        }
 
 
 

@@ -20,7 +20,7 @@
             android:layout_marginVertical="50dp"
             android:gravity="center"
             android:text="@string/introduce_tus_datos_de_acceso"
-            android:textSize="14sp" />
+            android:textSize="24sp" />
 
 
         <com.google.android.material.card.MaterialCardView
@@ -32,11 +32,11 @@
             app:cardCornerRadius="25dp">
 
             <EditText
+                android:focusedByDefault="true"
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/seed"
-                android:focusableInTouchMode="true"
                 android:hint="@string/loginEmail"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -44,7 +44,7 @@
                 android:paddingVertical="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -53,24 +53,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/seed"
             android:elevation="25dp"
+            android:outlineSpotShadowColor="@color/black"
+
+            android:backgroundTint="@color/seed"
+            android:layout_marginBottom="16dp"
+
             app:cardCornerRadius="25dp">
 
-            <EditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/seed"
-                android:hint="@string/loginPassword"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="14sp" />
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/seed"
+            android:hint="@string/loginPassword"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
         </com.google.android.material.card.MaterialCardView>
 
 
@@ -79,20 +82,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/acceder"
-            android:textSize="14sp" />
-
-
-        <TextView
-            android:id="@+id/forgotPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/olvid_mi_contrase_a"
-            android:textAlignment="center"
-            android:textSize="14sp" />
+            android:text="Acceder"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

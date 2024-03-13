@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment1"
+        android:icon="@drawable/admin_calendar"
+        android:title="@string/inicio"
+        android:tint="@color/white">
+
+
+    </item>
+
+    <item
+        android:id="@+id/fragment2"
+        android:icon="@drawable/admin_history"
+        android:title="@string/historial"
+        android:tint="@color/white">
+
+    </item>
+
+    <item
+        android:id="@+id/fragment3"
+        android:icon="@drawable/admin_account"
+        android:title="@string/usuarios"
+        android:tint="@color/white">
+
+    </item>
+
+
+</menu>

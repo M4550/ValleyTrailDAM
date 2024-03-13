@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:enableOnBackInvokedCallback="true"
@@ -14,28 +20,28 @@
         android:theme="@style/Theme.ValleyTrailDAM"
         tools:targetApi="31">
         <activity
-            android:name=".ui.view.HomeRouteActivity"
+            android:name=".ui.view.userview.HomeRouteActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.RequestRouteActivity"
+            android:name=".ui.view.userview.RequestRouteActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.AvailableRoutesActivity"
+            android:name=".ui.view.userview.AvailableRoutesActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.LoginActivity"
+            android:name=".ui.view.mainview.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.AdminHomeActivity"
+            android:name=".ui.view.adminview.AdminHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.SignupActivity"
+            android:name=".ui.view.mainview.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.UserHomeActivity"
+            android:name=".ui.view.userview.UserHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.MainActivity"
+            android:name=".ui.view.mainview.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +49,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

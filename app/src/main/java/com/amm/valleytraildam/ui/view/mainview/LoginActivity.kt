@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.mainview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +14,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        binding.etEmail.requestFocus()
 
 
 

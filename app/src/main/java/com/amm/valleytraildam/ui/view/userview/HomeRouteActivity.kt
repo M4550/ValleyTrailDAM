@@ -1,16 +1,16 @@
-package com.amm.valleytraildam.ui.view
+package com.amm.valleytraildam.ui.view.userview
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityHomeRouteBinding
+import com.amm.valleytraildam.ui.view.mainview.SignupActivity
 
 class HomeRouteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeRouteBinding
     private lateinit var routeId: String
-
+    private var isLogged = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,20 +18,49 @@ class HomeRouteActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        intent.extras?.let {
+            isLogged = it.getBoolean("isLogged")
+        }
+
         setRouteContent(intent)
 
-        binding.ibAddRoute.setOnClickListener {
-            intent.extras?.let {
-                routeId = it.getString("routeKey").toString()
+        if(isLogged){
+
+            binding.ibAddRoute.setOnClickListener {
+
+                if (!isLogged){
+                    binding.ibAddRoute.setOnClickListener {
+                        val intent = Intent(this, SignupActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+
+
+                intent.extras?.let {
+                    routeId = it.getString("routeKey").toString()
+                }
+
+                val intent = Intent(this, RequestRouteActivity::class.java)
+                intent.putExtra("routeKey", routeId)
+                startActivity(intent)
             }
 
-            val intent = Intent(this, RequestRouteActivity::class.java)
-            intent.putExtra("routeKey", routeId)
-            startActivity(intent)
+        }else{
+            binding.ibAddRoute.text = getString(R.string.inicia_sesi_n)
+            binding.ibAddRoute.setOnClickListener {
+                val intent = Intent(this, SignupActivity::class.java)
+                startActivity(intent)
+            }
         }
 
 
+
+
+
+
     }
+
+
 
 
     private fun setRouteContent(intent: Intent?) {
