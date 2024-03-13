@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
@@ -91,8 +92,12 @@ class AdminHomeFragment : Fragment() {
 
         binding.archiveBtn.setOnClickListener {
 
-            archiveRoute(activeRoute, db)
+
             Log.i("ArchivedRoute", "$activeRoute")
+
+            CoroutineScope(Dispatchers.IO).launch {
+                archiveRoute(activeRoute, db)
+            }
             setupCalendar(year, month, dayOfMonth)
 
         }
