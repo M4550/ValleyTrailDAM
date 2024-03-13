@@ -7,10 +7,10 @@ import android.widget.Toast
 
 import com.amm.valleytraildam.databinding.ActivityRegisterBinding
 import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.viewmodel.CheckUserInfo
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.CheckUserInfo
 import com.amm.valleytraildam.ui.viewmodel.DataBaseRegister
 import com.amm.valleytraildam.ui.viewmodel.HideKeyboard
-import com.amm.valleytraildam.ui.viewmodel.ShowDatePicker
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.ShowDatePicker
 import java.util.Calendar
 
 

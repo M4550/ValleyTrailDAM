@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel.userviewmodel
 
 import android.view.View
 import android.widget.TextView
@@ -10,7 +10,7 @@ import com.amm.valleytraildam.model.Route
 class UserRoutesViewHolder(itemView: View) : ViewHolder(itemView) {
 
 
-    val routeDate = itemView.findViewById<TextView>(R.id.rvTextDate)
+    val routeDate: TextView = itemView.findViewById(R.id.rvTextDate)
 
     fun render(route: Route) {
         routeDate.text = route.date

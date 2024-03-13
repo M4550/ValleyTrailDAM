@@ -1,8 +1,6 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel.userviewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.amm.valleytraildam.model.Route
 import com.google.firebase.auth.FirebaseAuth

@@ -118,14 +118,15 @@
                 tools:text="Participantes" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvParticipants"
+            <Button
+                android:id="@+id/btnDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                tools:text="Estado" />
+                android:text="@string/detalles"
+                tools:text="Detalles" />
 
 
         </LinearLayout>

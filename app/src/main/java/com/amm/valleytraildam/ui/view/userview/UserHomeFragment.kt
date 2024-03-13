@@ -8,25 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.FragmentUserHomeBinding
 import com.amm.valleytraildam.model.Route
-import com.amm.valleytraildam.ui.view.mainview.MainActivity
-import com.amm.valleytraildam.ui.viewmodel.UserDataViewModel
-import com.amm.valleytraildam.ui.viewmodel.UserHomeViewModel
-import com.amm.valleytraildam.ui.viewmodel.UserRoutesAdapter
-import com.google.firebase.firestore.FirebaseFirestore
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserHomeViewModel
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserRoutesAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 class UserHomeFragment : Fragment() {
     private lateinit var binding : FragmentUserHomeBinding
-
-    companion object {
-        fun newInstance() = UserHomeFragment()
-    }
-
     private lateinit var viewModel: UserHomeViewModel
 
     override fun onCreateView(
@@ -43,12 +33,8 @@ class UserHomeFragment : Fragment() {
         viewModel = ViewModelProvider(this)[UserHomeViewModel::class.java]
 
 
-
-
-
         GlobalScope.launch(Dispatchers.Main) {
             routeList = viewModel.getUserRoutes()
-            Log.i("UserDataFragment", "routeList = $routeList")
 
             fun initrecyclerView(){
                 val recyclerView = binding.rvRoutes

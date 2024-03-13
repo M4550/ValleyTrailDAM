@@ -5,8 +5,7 @@ data class Route (
     var maxParticipants: Int? = 12,
     var participants: Int? = 0,
     var routeName: String? = "",
-    var time : String? = "",
+    var time : String? = "10:00 Horas",
     var users: ArrayList<String>? = arrayListOf(""),
-    var isActive: Boolean? = false,
     var isBloqued: Boolean? = false
 )

@@ -18,13 +18,6 @@
 
     </item>
 
-    <item
-        android:id="@+id/fragment3"
-        android:icon="@drawable/admin_account"
-        android:title="@string/usuarios"
-        android:tint="@color/white">
-
-    </item>
 
 
 </menu>

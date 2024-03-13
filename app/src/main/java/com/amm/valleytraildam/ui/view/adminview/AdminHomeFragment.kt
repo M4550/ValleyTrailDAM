@@ -1,6 +1,7 @@
 package com.amm.valleytraildam.ui.view.adminview
 
 
+import android.content.Intent
 import android.graphics.Color
 import android.icu.util.Calendar
 import android.os.Bundle
@@ -72,6 +73,16 @@ class AdminHomeFragment : Fragment() {
         }
 
 
+        binding.btnDetails.setOnClickListener {
+
+            val intent = Intent(requireContext(), AdminRouteDetails::class.java)
+            intent.putExtra("date", activeRoute!!.date)
+            intent.putExtra("isActive", true)
+            startActivity(intent)
+
+        }
+
+
         // Lógica para bloquear o desbloquear el día
         binding.blockBtn.setOnClickListener {
             if (blockedDay) {
@@ -136,6 +147,7 @@ class AdminHomeFragment : Fragment() {
                 binding.blockBtn.isEnabled = false
                 binding.archiveBtn.isEnabled = true
                 binding.blockBtn.text = "Ya hay una ruta"
+                binding.btnDetails.isEnabled = true
             } else {
                 // Día sin ocupar
                 binding.archiveBtn.isEnabled = false

@@ -8,12 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.FragmentUserDataBinding
-import com.amm.valleytraildam.model.User
 import com.amm.valleytraildam.ui.view.mainview.MainActivity
-import com.amm.valleytraildam.ui.viewmodel.UserDataViewModel
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserDataViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

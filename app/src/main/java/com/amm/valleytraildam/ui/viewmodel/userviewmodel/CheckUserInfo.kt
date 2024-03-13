@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel.userviewmodel
 
 class CheckUserInfo {
     companion object {

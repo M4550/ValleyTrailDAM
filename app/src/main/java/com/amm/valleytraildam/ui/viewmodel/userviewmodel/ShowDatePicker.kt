@@ -1,10 +1,11 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel.userviewmodel
 
 import android.app.DatePickerDialog
 import android.content.Context
 import android.icu.text.SimpleDateFormat
 import android.view.View
 import android.widget.Toast
+import com.amm.valleytraildam.ui.viewmodel.HideKeyboard
 import java.util.Calendar
 import java.util.Locale
 

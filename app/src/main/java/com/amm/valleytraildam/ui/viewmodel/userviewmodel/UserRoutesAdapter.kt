@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.ui.viewmodel.userviewmodel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -17,6 +17,8 @@ class UserRoutesAdapter(private val userRoutesList : List<Route>): RecyclerView.
     }
 
     override fun onBindViewHolder(holder: UserRoutesViewHolder, position: Int) {
+
+
         val item = userRoutesList[position]
         holder.render(item)
     }

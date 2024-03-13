@@ -40,13 +40,18 @@ class AdminHomeActivity : AppCompatActivity() {
                         addToBackStack("replacement")
                     }
                 }
-                R.id.fragment3 -> {
-                    supportFragmentManager.commit {
-                        replace<AdminUsersFragment>(binding.fragmentContainer.id)
-                        setReorderingAllowed(true)
-                        addToBackStack("replacement")
-                    }
-                }
+
+
+//                R.id.fragment3 -> {
+//                    supportFragmentManager.commit {
+//                        replace<AdminUsersFragment>(binding.fragmentContainer.id)
+//                        setReorderingAllowed(true)
+//                        addToBackStack("replacement")
+//                    }
+//                }
+
+
+
             }
 
             true
