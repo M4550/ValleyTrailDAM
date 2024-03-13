@@ -15,8 +15,23 @@
 
 
         <Button
-            android:id="@+id/blockBtn"
+            android:id="@+id/archiveBtn"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/blockBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="40dp"
+            app:thumbTint="@color/seed"
+            android:buttonTint="@color/white"
+            android:text="@string/archivar_ruta"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/blockBtn"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +42,8 @@
             android:text="@string/bloquear_dia"
             android:textAlignment="center"
             android:textSize="14sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+ />
 
 
         <CalendarView

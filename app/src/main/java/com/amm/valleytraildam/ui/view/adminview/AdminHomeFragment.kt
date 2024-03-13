@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -34,9 +35,9 @@ class AdminHomeFragment : Fragment() {
     private val _isOccupiedDayLiveData = MutableLiveData<Boolean>()
     private val isOccupiedDayLiveData: LiveData<Boolean> = _isOccupiedDayLiveData
     private var selectedDate = ""
-    private  var year = 0
-    private  var month = 0
-    private  var dayOfMonth = 0
+    private var year = 0
+    private var month = 0
+    private var dayOfMonth = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,9 +67,11 @@ class AdminHomeFragment : Fragment() {
             setupCalendar(year, month, dayOfMonth)
             isOccupiedDay()
             updateListenerOccupiedDay(year, month, dayOfMonth)
+
         }
 
-        // Movimos la lógica de eliminación de la ruta al botón blockBtn
+
+        // Lógica para bloquear o desbloquear el día
         binding.blockBtn.setOnClickListener {
             if (blockedDay) {
                 db.collection("active_routes").document(selectedDate).delete()
@@ -86,10 +89,36 @@ class AdminHomeFragment : Fragment() {
             setupCalendar(year, month, dayOfMonth)
         }
 
+        binding.archiveBtn.setOnClickListener {
 
+            archiveRoute(activeRoute, db)
+            Log.i("ArchivedRoute", "$activeRoute")
+
+        }
 
 
     }
+
+    private fun archiveRoute(activeRoute: Route?, db: FirebaseFirestore) {
+        if (activeRoute != null) {
+            db.collection("archived_routes").document(selectedDate).set(
+                hashMapOf(
+                    "date" to activeRoute.date,
+                    "routeName" to activeRoute.routeName,
+                    "time" to activeRoute.time,
+                    "participants" to activeRoute.participants,
+                    "isActive" to false,
+                    "users" to activeRoute.users
+
+                )
+            ).addOnSuccessListener {
+                db.collection("active_routes").document(selectedDate).delete()
+                Toast.makeText(activity, "Ruta archivada", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    }
+
 
     private fun updateListenerOccupiedDay(year: Int, month: Int, dayOfMonth: Int) {
         val fixedMonth = month + 1
@@ -99,9 +128,11 @@ class AdminHomeFragment : Fragment() {
             if (occuppiedDay) {
                 // Día ocupado: deshabilitar botón de bloqueo
                 binding.blockBtn.isEnabled = false
+                binding.archiveBtn.isEnabled = true
                 binding.blockBtn.text = "Ya hay una ruta"
             } else {
                 // Día sin ocupar
+                binding.archiveBtn.isEnabled = false
                 binding.blockBtn.isEnabled = true
                 if (blockedDay) {
                     // Día no ocupado pero bloqueado: mostrar texto "Desbloquear"
