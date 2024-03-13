@@ -93,6 +93,7 @@ class AdminHomeFragment : Fragment() {
 
             archiveRoute(activeRoute, db)
             Log.i("ArchivedRoute", "$activeRoute")
+            setupCalendar(year, month, dayOfMonth)
 
         }
 
