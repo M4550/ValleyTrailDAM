@@ -6,12 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityRouteDetailsBinding
 import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminHistoryAdapter
 import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminUsersAdapter
 import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminUsersViewHolder
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,7 +18,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
-import java.util.Locale
 
 class AdminRouteDetails : AppCompatActivity(), AdminUsersViewHolder.OnUserClickListener {
     private lateinit var binding: ActivityRouteDetailsBinding
@@ -54,7 +52,8 @@ class AdminRouteDetails : AppCompatActivity(), AdminUsersViewHolder.OnUserClickL
         binding.tvDate.text = route.date
         binding.tvName.text = route.routeName
         binding.tvTime.text = route.time
-        binding.tvParticipants.text = "${route.participants.toString()} participantes"
+        binding.tvParticipants.text =
+            getString(R.string.participantes, route.participants.toString())
     }
 
     private fun retrieveRouteInfo(date: String?, isActive: Boolean) {

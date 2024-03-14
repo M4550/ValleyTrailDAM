@@ -86,6 +86,14 @@
     <string name="participantes_m_ximos">Participantes máximos</string>
     <string name="guardar_ruta">Guardar ruta</string>
     <string name="elige_la_ruta">Elige la ruta</string>
+    <string name="participantes">%1$s participantes</string>
+    <string name="desbloquear">Desbloquear</string>
+    <string name="bloquear">Bloquear</string>
+    <string name="bloqueado">Bloqueado</string>
+    <string name="ruta_agendada">Ruta agendada</string>
+    <string name="libre">Libre</string>
+    <string name="tel">Tel: %1$s</string>
+    <string name="dni">DNI: %1$s</string>
 
 
 </resources>

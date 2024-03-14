@@ -10,15 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.FragmentAdminHomeBinding
 import com.amm.valleytraildam.model.Route
-import com.amm.valleytraildam.model.User
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.CoroutineScope
@@ -165,11 +162,11 @@ class AdminHomeFragment : Fragment() {
                 binding.blockBtn.isEnabled = true
                 if (blockedDay) {
                     // Configurar botón de bloqueo cuando el día está bloqueado
-                    binding.blockBtn.text = "Desbloquear"
+                    binding.blockBtn.text = getString(R.string.desbloquear)
                     binding.btnAddRoute.isEnabled = false
                 } else {
                     // Configurar botón de bloqueo cuando el día no está bloqueado
-                    binding.blockBtn.text = "Bloquear"
+                    binding.blockBtn.text = getString(R.string.bloquear)
                     binding.btnAddRoute.isEnabled = true
                 }
             }
@@ -246,7 +243,7 @@ class AdminHomeFragment : Fragment() {
         binding.tvTime.visibility = View.GONE
         binding.tvDate.text = activeRoute.date
         binding.tvTime.text = activeRoute.time
-        binding.tvDayStatus.text = "Bloqueado"
+        binding.tvDayStatus.text = getString(R.string.bloqueado)
         binding.tvDayStatus.setBackgroundColor(Color.RED)
     }
 
@@ -259,7 +256,7 @@ class AdminHomeFragment : Fragment() {
         binding.tvDate.text = date
         binding.tvRouteName.text = activeRoute.routeName.toString()
         binding.tvTime.text = activeRoute.time
-        binding.tvDayStatus.text = "Ocupado"
+        binding.tvDayStatus.text = getString(R.string.ruta_agendada)
         binding.tvDayStatus.setBackgroundColor(Color.YELLOW)
     }
 
@@ -269,16 +266,9 @@ class AdminHomeFragment : Fragment() {
         binding.tvRouteName.visibility = View.GONE
         binding.tvTime.visibility = View.GONE
         binding.tvDate.text = date
-        binding.tvDayStatus.text = "Libre"
+        binding.tvDayStatus.text = getString(R.string.libre)
         binding.tvDayStatus.setBackgroundColor(Color.GREEN)
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) = AdminHomeFragment().apply {
-            arguments = Bundle().apply {
 
-            }
-        }
-    }
 }

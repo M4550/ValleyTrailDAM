@@ -9,10 +9,8 @@ import android.widget.SeekBar
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityAdminAddRouteBinding
-import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminCreateRoute
 import java.util.Calendar
 

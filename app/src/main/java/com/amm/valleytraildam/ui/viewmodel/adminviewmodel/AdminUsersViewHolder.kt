@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.UserItemBinding
 import com.amm.valleytraildam.model.User
 
@@ -21,8 +22,8 @@ class AdminUsersViewHolder(private val binding: UserItemBinding,
         this.user = user
         binding.tvUserEmail.text = user.email
         binding.tvUserName.text = user.name
-        binding.tvUserPhone.text = "Tel: ${user.phone}"
-        binding.tvUserNif.text = "DNI: ${user.nif}"
+        binding.tvUserPhone.text = binding.root.context.getString (R.string.tel, user.phone)
+        binding.tvUserNif.text = binding.root.context.getString(R.string.dni, user.nif)
     }
 
     override fun onClick(v: View?) {
