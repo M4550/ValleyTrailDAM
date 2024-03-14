@@ -36,13 +36,21 @@
     <string name="a_traves_del_congosto">Through the Gorge</string>
     <string name="caminos_ancestrales">Ancestral Paths</string>
     <string name="civilizaciones_pasadas">Past Civilizations</string>
-    <string name="anc_user_info_card">"Difficulty: Easy"</string>
-    <string name="anc_description">"Distance: 11.2 Kms"</string>
-    <string name="civ_user_info_card">Duration: 5h 30min</string>
-    <string name="civ_description">"Distance: 14.7 Kms"</string>
-    <string name="cong_user_info_card">Duration: 7h 30min</string>
-    <string name="cong_description">"Distance: 13.8 Kms"</string>
-    <string name="numero_participantes">Duration: 6h</string>
+
+
+    <string name="anc_user_info_card">Difficulty: Easy \nDistance: 11.2 Km \nDuration: 5h 30min</string>
+    <string name="anc_description">Circular route to the uninhabited village of Bolturina passing through the Sanctuary of Torreciudad from Secastilla.</string>
+
+    <string name="civ_user_info_card">Difficulty: Medium \nDistance: 14.7 Km \nDuration: 7h 30min</string>
+    <string name="civ_description">Circular route to the village of Bolturina passing through the Roman site of Labitolosa from Secastilla.</string>
+
+    <string name="cong_user_info_card">Difficulty: Medium \nDistance: 13.8 Km \nDuration: 6h</string>
+    <string name="cong_description">Circular route to the village of Olvena crossing the gorge with departure from La Puebla de Castro.</string>
+
+
+    <string name="numero_participantes">Participant number</string>
+    <string name="reservar">Schedule</string>
+
     <string name="disponibilidad">Availability</string>
     <string name="selecciona_una_fecha_para_comprobar_la_disponibilidad">Select a date to check availability</string>
     <string name="disponible">Available</string>
@@ -62,12 +70,11 @@
     <string name="usuarios">Users</string>
     <string name="olvid_mi_contrase_a">I forgot my password</string>
     <string name="acceder">Access</string>
-    <string name="bienvenid">My Routes</string>
     <string name="mis_rutas">My Routes</string>
     <string name="archivar_ruta">Archive Route</string>
     <string name="detalles">Details</string>
     <string name="a_adir_ruta">Add Route</string>
-    <string name="ya_hay_una_ruta">There is already a route</string>
+    <string name="ya_hay_una_ruta">Occupied day</string>
     <string name="nueva_ruta">Create new route</string>
     <string name="seleccionar_hora">Select Time</string>
     <string name="participantes_m_ximos">Maximum Participants</string>

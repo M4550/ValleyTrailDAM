@@ -23,6 +23,7 @@ class AdminCreateRoute {
                 "participants" to 0,
                 "routeName" to routeName,
                 "time" to time,
+                "users" to ArrayList<String>(),
                 "isBloqued" to false,
                 "isActive" to true
             )

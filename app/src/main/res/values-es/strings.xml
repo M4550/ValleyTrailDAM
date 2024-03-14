@@ -36,13 +36,20 @@
     <string name="a_traves_del_congosto">A través del Congosto</string>
     <string name="caminos_ancestrales">Caminos Ancestrales</string>
     <string name="civilizaciones_pasadas">Civilizaciones Pasadas</string>
-    <string name="anc_user_info_card">"Dificultad: Fácil "</string>
-    <string name="anc_description">"Distancia: 11,2 Kms "</string>
-    <string name="civ_user_info_card">Duración: 5h 30min</string>
-    <string name="civ_description">"Distancia: 14,7 Kms "</string>
-    <string name="cong_user_info_card">Duración: 7h 30min</string>
-    <string name="cong_description">"Distancia: 13,8 Kms "</string>
-    <string name="numero_participantes">Duración: 6h</string>
+
+    <string name="anc_user_info_card">Dificultad: Fácil \nDistancia: 11,2 Km \nDuración: 5h 30min</string>
+    <string name="anc_description">Circular al pueblo deshabitado de Bolturina pasando por el Santuario deTorreciudad desde Secastilla.</string>
+
+    <string name="civ_user_info_card">Dificultad: Medio \nDistancia: 14,7 Km \nDuración: 7h 30min</string>
+    <string name="civ_description">Circular al pueblo de Bolturina por yacimiento  romano de Labitolosa desde Secastilla.</string>
+
+    <string name="cong_user_info_card"> Dificultad: Media \nDistancia: 13,8Km \nDuración: 6h</string>
+    <string name="cong_description">Circular al pueblo de Olvena atravesando el congosto con salida desde  La Puebla de Castro.</string>
+
+
+    <string name="numero_participantes">Número de participantes</string>
+    <string name="reservar">Reservar</string>
+
     <string name="disponibilidad">Disponibilidad</string>
     <string name="selecciona_una_fecha_para_comprobar_la_disponibilidad">Selecciona una fecha para comprobar la disponibilidad</string>
     <string name="disponible">Disponible</string>
@@ -62,7 +69,6 @@
     <string name="usuarios">Usuarios</string>
     <string name="olvid_mi_contrase_a">Olvidé mi contraseña</string>
     <string name="acceder">Acceder</string>
-    <string name="bienvenid">Mis Rutas</string>
     <string name="mis_rutas">Mis Rutas</string>
     <string name="archivar_ruta">Archivar Ruta</string>
     <string name="detalles">Detalles</string>

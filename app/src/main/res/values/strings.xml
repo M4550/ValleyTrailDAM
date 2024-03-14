@@ -1,7 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Valley Trail</string>
-
-    <!-- Strings Registro-->
     <string name="registerBtn">Registrarse</string>
     <string name="enterBtn">Entrar</string>
     <string name="enterNoLoginBtn">Entrar sin registro</string>
@@ -16,13 +15,7 @@
     <string name="datePicker">Fecha de nacimiento</string>
     <string name="tv1">Completa los campos para registrarte</string>
     <string name="btnSave">Registrarse</string>
-
-    <!-- Strings UserHome-->
     <string name="uhTitle">Mi cuenta</string>
-
-
-    <!-- Strings Login-->
-
     <string name="title_activity_user_home">UserHomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -35,27 +28,28 @@
     <string name="login_failed">Inicio de sesión fallido</string>
     <string name="loginPassword">Contraseña</string>
     <string name="loginEmail">Email</string>
-    <string name="navigation_drawer_open">DrawerOpen\n</string>
+    <string name="navigation_drawer_open">DrawerOpen</string>
     <string name="navigation_drawer_close">DrawerClose</string>
-    <string name="invalid_username">E</string>
+    <string name="invalid_username">Usuario no vá280lido</string>
     <string name="logouttext">Cerrar Sesión</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
     <string name="a_traves_del_congosto">A través del Congosto</string>
     <string name="caminos_ancestrales">Caminos Ancestrales</string>
     <string name="civilizaciones_pasadas">Civilizaciones Pasadas</string>
 
-    <string name="anc_user_info_card">Dificultad: Facil \nDistancia: 11,2 Kms \nDuración: 5h 30min</string>
-    <string name="anc_description">Circular al pueblo deshabitado de Bolturina pasando por el Santuario de Torreciudad desde Secastilla.</string>
+    <string name="anc_user_info_card">Dificultad: Fácil \nDistancia: 11,2 Km \nDuración: 5h 30min</string>
+    <string name="anc_description">Circular al pueblo deshabitado de Bolturina pasando por el Santuario deTorreciudad desde Secastilla.</string>
 
-    <string name="civ_user_info_card">Dificultad: Media \nDistancia: 14,7 Kms \nDuración: 7h 30min</string>
-    <string name="civ_description">Circular al pueblo de Bolturina por yacimiento  romano de Labitolosa desde Secastilla.  </string>
+    <string name="civ_user_info_card">Dificultad: Medio \nDistancia: 14,7 Km \nDuración: 7h 30min</string>
+    <string name="civ_description">Circular al pueblo de Bolturina por yacimiento  romano de Labitolosa desde Secastilla.</string>
 
-    <string name="cong_user_info_card">Dificultad: Media \nDistancia: 13,8 Kms \nDuración: 6h</string>
+    <string name="cong_user_info_card"> Dificultad: Media \nDistancia: 13,8Km \nDuración: 6h</string>
     <string name="cong_description">Circular al pueblo de Olvena atravesando el congosto con salida desde  La Puebla de Castro.</string>
+
+
     <string name="numero_participantes">Número de participantes</string>
+    <string name="reservar">Reservar</string>
+
     <string name="disponibilidad">Disponibilidad</string>
     <string name="selecciona_una_fecha_para_comprobar_la_disponibilidad">Selecciona una fecha para comprobar la disponibilidad</string>
     <string name="disponible">Disponible</string>
@@ -69,13 +63,12 @@
     <string name="contacto_telefono">Telefono</string>
     <string name="inicia_sesi_n">Inicia Sesión</string>
     <string name="calendario_de_rutas">Calendario de rutas</string>
-    <string name="bloquear_dia">Bloquear dia</string>
+    <string name="bloquear_dia">Bloquear día</string>
     <string name="introduce_tus_datos_de_acceso">Introduce tus datos de acceso</string>
     <string name="historial">Historial</string>
     <string name="usuarios">Usuarios</string>
     <string name="olvid_mi_contrase_a">Olvidé mi contraseña</string>
     <string name="acceder">Acceder</string>
-    <string name="bienvenid">Mis Rutas</string>
     <string name="mis_rutas">Mis Rutas</string>
     <string name="archivar_ruta">Archivar Ruta</string>
     <string name="detalles">Detalles</string>
@@ -94,6 +87,4 @@
     <string name="libre">Libre</string>
     <string name="tel">Tel: %1$s</string>
     <string name="dni">DNI: %1$s</string>
-
-
 </resources>

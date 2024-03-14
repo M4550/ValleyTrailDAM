@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/bienvenid"
+        android:text="@string/welcome"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/lLayout"
         app:layout_constraintEnd_toEndOf="parent"
