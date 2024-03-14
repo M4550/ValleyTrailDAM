@@ -26,7 +26,7 @@ class AdminHistoryFragment : Fragment(), AdminHistoryViewHolder.OnRouteClickList
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAdminHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }

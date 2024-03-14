@@ -9,7 +9,7 @@ data class User (
     var phone: String? = "",
     var surname: String? = "",
     var currentRoutes : ArrayList<String>? = arrayListOf(""),
-    var pastRoutes : ArrayList<String>? = arrayListOf(""),
+
     val isAdmin: Boolean? = false,
     var address: String? = ""
 )

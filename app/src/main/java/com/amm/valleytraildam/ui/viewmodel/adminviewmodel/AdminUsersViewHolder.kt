@@ -21,8 +21,8 @@ class AdminUsersViewHolder(private val binding: UserItemBinding,
         this.user = user
         binding.tvUserEmail.text = user.email
         binding.tvUserName.text = user.name
-        binding.tvUserPhone.text = user.phone
-        binding.tvUserNif.text = user.nif
+        binding.tvUserPhone.text = "Tel: ${user.phone}"
+        binding.tvUserNif.text = "DNI: ${user.nif}"
     }
 
     override fun onClick(v: View?) {

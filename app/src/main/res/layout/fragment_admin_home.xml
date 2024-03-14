@@ -17,11 +17,10 @@
         <Button
             android:id="@+id/archiveBtn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/blockBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="40dp"
+            android:layout_marginHorizontal="15dp"
             app:thumbTint="@color/seed"
             android:buttonTint="@color/white"
             android:text="@string/archivar_ruta"
@@ -36,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="40dp"
+            android:layout_marginHorizontal="15dp"
             app:thumbTint="@color/seed"
             android:buttonTint="@color/white"
             android:text="@string/bloquear_dia"
@@ -127,6 +126,17 @@
                 android:textSize="14sp"
                 android:text="@string/detalles"
                 tools:text="Detalles" />
+
+
+            <Button
+                android:id="@+id/btnAddRoute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="@string/a_adir_ruta"
+                 />
 
 
         </LinearLayout>

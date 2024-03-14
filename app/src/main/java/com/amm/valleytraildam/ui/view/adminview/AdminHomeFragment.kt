@@ -10,9 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.FragmentAdminHomeBinding
 import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.model.User
@@ -21,7 +23,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
@@ -47,17 +48,39 @@ class AdminHomeFragment : Fragment() {
         arguments?.let {
 
         }
+
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+
+
         binding = FragmentAdminHomeBinding.inflate(layoutInflater)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnDetails.isEnabled = false
+        binding.blockBtn.isEnabled = false
+        binding.archiveBtn.isEnabled = false
+        binding.btnAddRoute.isEnabled = false
+
+
+
+        binding.btnAddRoute.setOnClickListener {
+
+            val intent = Intent(requireContext(), AdminAddRoute::class.java)
+            intent.putExtra("date", date)
+            startActivity(intent)
+
+
+        }
 
 
 
@@ -97,6 +120,7 @@ class AdminHomeFragment : Fragment() {
                     )
                 )
             }
+            isOccupiedDay()
 
             setupCalendar(year, month, dayOfMonth)
         }
@@ -109,12 +133,14 @@ class AdminHomeFragment : Fragment() {
             CoroutineScope(Dispatchers.IO).launch {
                 archiveRoute(activeRoute, db)
             }
+            isOccupiedDay()
             setupCalendar(year, month, dayOfMonth)
 
         }
 
 
     }
+
 
     private fun archiveRoute(activeRoute: Route?, db: FirebaseFirestore) {
         if (activeRoute != null) {
@@ -141,23 +167,30 @@ class AdminHomeFragment : Fragment() {
         val fixedMonth = month + 1
         selectedDate = "$dayOfMonth-$fixedMonth-$year"
 
-        isOccupiedDayLiveData.observe(viewLifecycleOwner) { occuppiedDay ->
-            if (occuppiedDay) {
+        isOccupiedDayLiveData.observe(viewLifecycleOwner) { occupiedDay ->
+            if (occupiedDay) {
                 // Día ocupado: deshabilitar botón de bloqueo
                 binding.blockBtn.isEnabled = false
                 binding.archiveBtn.isEnabled = true
-                binding.blockBtn.text = "Ya hay una ruta"
+                binding.blockBtn.text = getString(R.string.ya_hay_una_ruta)
                 binding.btnDetails.isEnabled = true
+                binding.btnAddRoute.isEnabled = false
+
             } else {
                 // Día sin ocupar
+                binding.btnDetails.isEnabled = false
                 binding.archiveBtn.isEnabled = false
                 binding.blockBtn.isEnabled = true
                 if (blockedDay) {
                     // Día no ocupado pero bloqueado: mostrar texto "Desbloquear"
-                    binding.blockBtn.text = "Desbloquear $dayOfMonth-$month-$year"
+                    binding.blockBtn.text = "Desbloquear"
+                    binding.btnAddRoute.isEnabled = false
+
                 } else {
                     // Día no ocupado y no bloqueado: mostrar texto "Bloquear"
-                    binding.blockBtn.text = "Bloquear $dayOfMonth-$month-$year"
+                    binding.blockBtn.text = "Bloquear"
+                    binding.btnAddRoute.isEnabled = true
+
                 }
             }
         }
@@ -198,9 +231,6 @@ class AdminHomeFragment : Fragment() {
             val userDocRef = db.collection("users")
                 .document(FirebaseAuth.getInstance().currentUser!!.email.toString())
             val documentSnapshot = userDocRef.get().await()
-            val user = documentSnapshot.toObject<User>()!!
-            val normalizedEmail = user.email.toString()
-
             db.collection("active_routes").document(date).get()
                 .addOnSuccessListener { documentSnapshot ->
                     val activeRoute: Route? = documentSnapshot.toObject(Route::class.java)

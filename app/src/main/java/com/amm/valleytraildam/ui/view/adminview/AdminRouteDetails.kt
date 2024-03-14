@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -68,19 +69,30 @@ class AdminRouteDetails : AppCompatActivity(), AdminUsersViewHolder.OnUserClickL
         GlobalScope.launch(Dispatchers.Main) {
             route = db.collection(collection).document(date!!).get().await()
                 .toObject(Route::class.java)!!
-            for (user in route.users!!) {
-                db.collection("users").document(user).get().await().toObject(User::class.java)
-                    ?.let { userList.add(it) }
 
+            if (
+                route.users != null
+            ){
+
+                Log.i("Rute dentro de bucle", route.users.toString())
+                route.users?.let { users ->
+                    if (users.isNotEmpty()) {
+                        for (user in users) {
+                            db.collection("users").document(user).get().await().toObject(User::class.java)
+                                ?.let { userList.add(it) }
+                        }
+                        initRecyclerView(userList)
+                    }
+                }
             }
 
 
-            initRecyclerView(userList)
             displayRouteInfo()
-
-
         }
     }
+
+
+
 
     override fun onUserClick(user: User) {
         val options = arrayOf("Llamar", "Enviar correo electrónico")
@@ -97,6 +109,7 @@ class AdminRouteDetails : AppCompatActivity(), AdminUsersViewHolder.OnUserClickL
                     }
                     startActivity(intent)
                 }
+
                 1 -> {
                     // Enviar correo electrónico
                     val email = user.email?.lowercase()?.trim()
@@ -106,6 +119,8 @@ class AdminRouteDetails : AppCompatActivity(), AdminUsersViewHolder.OnUserClickL
                     }
                     startActivity(intent)
                 }
+
+
             }
         }
         builder.show()

@@ -79,6 +79,13 @@
     <string name="mis_rutas">Mis Rutas</string>
     <string name="archivar_ruta">Archivar Ruta</string>
     <string name="detalles">Detalles</string>
+    <string name="a_adir_ruta">Añadir ruta</string>
+    <string name="ya_hay_una_ruta">Ya hay una ruta</string>
+    <string name="nueva_ruta">Crear nueva ruta</string>
+    <string name="seleccionar_hora">Seleccionar Hora</string>
+    <string name="participantes_m_ximos">Participantes máximos</string>
+    <string name="guardar_ruta">Guardar ruta</string>
+    <string name="elige_la_ruta">Elige la ruta</string>
 
 
 </resources>
