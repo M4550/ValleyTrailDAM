@@ -94,8 +94,17 @@ class AdminAddRoute : AppCompatActivity() {
                 setTitle("Confirmación")
                 setMessage("¿Los datos de la ruta son correctos?")
                 setPositiveButton("Sí") { _, _ ->
-
-                    AdminCreateRoute.AdminCreateRoute(date, participantNumber, routeKey, selectedTime, context)
+                    if (participantNumber != 0 && selectedTime.isNotBlank() && routeKey.isNotBlank()) {
+                        AdminCreateRoute.AdminCreateRoute(
+                            date, participantNumber, routeKey, selectedTime, this@AdminAddRoute
+                        )
+                    } else {
+                        Toast.makeText(
+                            this@AdminAddRoute,
+                            "Todos los campos deben estar cubiertos",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
                 setNegativeButton("Cancelar") { dialog, _ ->
                     dialog.dismiss()
@@ -103,7 +112,8 @@ class AdminAddRoute : AppCompatActivity() {
                 create().show()
             }
         }
-
-
     }
 }
+
+
+

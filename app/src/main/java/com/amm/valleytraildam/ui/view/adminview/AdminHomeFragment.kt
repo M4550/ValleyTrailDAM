@@ -42,72 +42,59 @@ class AdminHomeFragment : Fragment() {
     private var month = 0
     private var dayOfMonth = 0
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-
-
-    }
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-
-
+        // Inflar el layout para este fragmento
         binding = FragmentAdminHomeBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Deshabilitar botones por defecto
         binding.btnDetails.isEnabled = false
         binding.blockBtn.isEnabled = false
         binding.archiveBtn.isEnabled = false
         binding.btnAddRoute.isEnabled = false
 
-
-
+        // Manejar clic en "Añadir Ruta"
         binding.btnAddRoute.setOnClickListener {
-
+            // Iniciar actividad de añadir ruta con la fecha seleccionada
             val intent = Intent(requireContext(), AdminAddRoute::class.java)
             intent.putExtra("date", date)
             startActivity(intent)
-
-
         }
 
-
-
+        // Manejar selección de fecha en el calendario
         binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            // Guardar fecha seleccionada
             this.year = year
             this.month = month
             this.dayOfMonth = dayOfMonth
 
+            // Configurar la visualización del calendario
             setupCalendar(year, month, dayOfMonth)
-            isOccupiedDay()
-            updateListenerOccupiedDay(year, month, dayOfMonth)
 
+            // Verificar si el día seleccionado está ocupado
+            isOccupiedDay()
+            // Actualizar observador de día ocupado
+            updateListenerOccupiedDay(year, month, dayOfMonth)
         }
 
-
+        // Manejar clic en "Detalles"
         binding.btnDetails.setOnClickListener {
-
+            // Mostrar detalles de la ruta activa para la fecha seleccionada
             val intent = Intent(requireContext(), AdminRouteDetails::class.java)
             intent.putExtra("date", activeRoute!!.date)
             intent.putExtra("isActive", true)
             startActivity(intent)
-
         }
 
-
-        // Lógica para bloquear o desbloquear el día
+        // Manejar clic en "Bloquear" o "Desbloquear"
         binding.blockBtn.setOnClickListener {
+            // Bloquear o desbloquear día dependiendo del estado actual
             if (blockedDay) {
                 db.collection("active_routes").document(selectedDate).delete()
             } else {
@@ -120,28 +107,26 @@ class AdminHomeFragment : Fragment() {
                     )
                 )
             }
+            // Actualizar estado del día
             isOccupiedDay()
-
+            // Configurar visualización del calendario
             setupCalendar(year, month, dayOfMonth)
         }
 
+        // Manejar clic en "Archivar"
         binding.archiveBtn.setOnClickListener {
-
-
-            Log.i("ArchivedRoute", "$activeRoute")
-
+            // Archivar la ruta activa para la fecha seleccionada
             CoroutineScope(Dispatchers.IO).launch {
                 archiveRoute(activeRoute, db)
             }
+            // Actualizar estado del día
             isOccupiedDay()
+            // Configurar visualización del calendario
             setupCalendar(year, month, dayOfMonth)
-
         }
-
-
     }
 
-
+    // Función para archivar una ruta
     private fun archiveRoute(activeRoute: Route?, db: FirebaseFirestore) {
         if (activeRoute != null) {
             db.collection("archived_routes").document(selectedDate).set(
@@ -152,50 +137,46 @@ class AdminHomeFragment : Fragment() {
                     "participants" to activeRoute.participants,
                     "isActive" to false,
                     "users" to activeRoute.users
-
                 )
             ).addOnSuccessListener {
                 db.collection("active_routes").document(selectedDate).delete()
                 Toast.makeText(activity, "Ruta archivada", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 
-
+    // Función para actualizar el observador de día ocupado
     private fun updateListenerOccupiedDay(year: Int, month: Int, dayOfMonth: Int) {
         val fixedMonth = month + 1
         selectedDate = "$dayOfMonth-$fixedMonth-$year"
 
         isOccupiedDayLiveData.observe(viewLifecycleOwner) { occupiedDay ->
             if (occupiedDay) {
-                // Día ocupado: deshabilitar botón de bloqueo
+                // Configurar botones cuando el día está ocupado
                 binding.blockBtn.isEnabled = false
                 binding.archiveBtn.isEnabled = true
                 binding.blockBtn.text = getString(R.string.ya_hay_una_ruta)
                 binding.btnDetails.isEnabled = true
                 binding.btnAddRoute.isEnabled = false
-
             } else {
-                // Día sin ocupar
+                // Configurar botones cuando el día no está ocupado
                 binding.btnDetails.isEnabled = false
                 binding.archiveBtn.isEnabled = false
                 binding.blockBtn.isEnabled = true
                 if (blockedDay) {
-                    // Día no ocupado pero bloqueado: mostrar texto "Desbloquear"
+                    // Configurar botón de bloqueo cuando el día está bloqueado
                     binding.blockBtn.text = "Desbloquear"
                     binding.btnAddRoute.isEnabled = false
-
                 } else {
-                    // Día no ocupado y no bloqueado: mostrar texto "Bloquear"
+                    // Configurar botón de bloqueo cuando el día no está bloqueado
                     binding.blockBtn.text = "Bloquear"
                     binding.btnAddRoute.isEnabled = true
-
                 }
             }
         }
     }
 
+    // Función para verificar si el día está ocupado
     private fun isOccupiedDay() {
         CoroutineScope(Dispatchers.IO).launch {
             val routeRef = db.collection("active_routes")
@@ -220,32 +201,29 @@ class AdminHomeFragment : Fragment() {
         }
     }
 
+    // Función para configurar la visualización del calendario
     private fun setupCalendar(year: Int, month: Int, dayOfMonth: Int) {
         getDayOfWeek(year, month, dayOfMonth)
-        Log.e("YourFragment", "$dayOfMonth-$month-$year")
 
+        // Formatear la fecha
         val month = month + 1
         date = "$dayOfMonth-$month-$year"
 
+        // Obtener el estado del día desde la base de datos y actualizar la visualización en función del estado
         CoroutineScope(Dispatchers.IO).launch {
-            val userDocRef = db.collection("users")
-                .document(FirebaseAuth.getInstance().currentUser!!.email.toString())
-            val documentSnapshot = userDocRef.get().await()
             db.collection("active_routes").document(date).get()
                 .addOnSuccessListener { documentSnapshot ->
                     val activeRoute: Route? = documentSnapshot.toObject(Route::class.java)
-                    Log.e("Info DB", "ActiveRoute data: $activeRoute")
-
                     if (activeRoute != null) {
                         if (activeRoute.routeName == "No disponible") {
-                            // Ruta no nula y maxParticipants igual a 0: lógica de ruta bloqueada
+                            // Ruta no disponible (día bloqueado)
                             updateBlockedView(activeRoute)
                         } else {
-                            // Ruta no nula y maxParticipants no igual a 0: lógica para ruta ocupada
+                            // Ruta disponible (día ocupado)
                             updateOccupiedView(activeRoute)
                         }
                     } else {
-                        // Ruta nula: lógica para día libre
+                        // Día libre (sin ruta)
                         updateFreeView()
                     }
                 }.addOnFailureListener {
@@ -254,12 +232,14 @@ class AdminHomeFragment : Fragment() {
         }
     }
 
+    // Función para obtener el día de la semana
     private fun getDayOfWeek(year: Int, month: Int, dayOfMonth: Int): Int {
         val calendar = Calendar.getInstance()
         calendar.set(dayOfMonth, month, year)
         return calendar.get(Calendar.DAY_OF_WEEK)
     }
 
+    // Función para actualizar la visualización cuando el día está bloqueado
     private fun updateBlockedView(activeRoute: Route) {
         binding.tvParticipants.visibility = View.GONE
         binding.tvRouteName.visibility = View.GONE
@@ -270,6 +250,7 @@ class AdminHomeFragment : Fragment() {
         binding.tvDayStatus.setBackgroundColor(Color.RED)
     }
 
+    // Función para actualizar la visualización cuando el día está ocupado
     private fun updateOccupiedView(activeRoute: Route) {
         binding.tvParticipants.visibility = View.VISIBLE
         binding.tvRouteName.visibility = View.VISIBLE
@@ -282,6 +263,7 @@ class AdminHomeFragment : Fragment() {
         binding.tvDayStatus.setBackgroundColor(Color.YELLOW)
     }
 
+    // Función para actualizar la visualización cuando el día está libre
     private fun updateFreeView() {
         binding.tvParticipants.visibility = View.GONE
         binding.tvRouteName.visibility = View.GONE
