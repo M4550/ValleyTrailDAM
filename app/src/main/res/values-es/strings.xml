@@ -30,13 +30,13 @@
     <string name="loginEmail">Email</string>
     <string name="navigation_drawer_open">DrawerOpen</string>
     <string name="navigation_drawer_close">DrawerClose</string>
-    <string name="invalid_username">E</string>
+    <string name="invalid_username">Usuario no vá280lido</string>
     <string name="logouttext">Cerrar Sesión</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="a_traves_del_congosto">A través del Congosto</string>
     <string name="caminos_ancestrales">Caminos Ancestrales</string>
     <string name="civilizaciones_pasadas">Civilizaciones Pasadas</string>
-    <string name="anc_user_info_card">"Dificultad: Facil "</string>
+    <string name="anc_user_info_card">"Dificultad: Fácil "</string>
     <string name="anc_description">"Distancia: 11,2 Kms "</string>
     <string name="civ_user_info_card">Duración: 5h 30min</string>
     <string name="civ_description">"Distancia: 14,7 Kms "</string>
@@ -56,7 +56,7 @@
     <string name="contacto_telefono">Telefono</string>
     <string name="inicia_sesi_n">Inicia Sesión</string>
     <string name="calendario_de_rutas">Calendario de rutas</string>
-    <string name="bloquear_dia">Bloquear dia</string>
+    <string name="bloquear_dia">Bloquear día</string>
     <string name="introduce_tus_datos_de_acceso">Introduce tus datos de acceso</string>
     <string name="historial">Historial</string>
     <string name="usuarios">Usuarios</string>
