@@ -30,9 +30,9 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Acceder</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="welcome">Bienvenid@!!</string>
+    <string name="invalid_password">La contraseña debe tener mas de 5 caracteres</string>
+    <string name="login_failed">Inicio de sesión fallido</string>
     <string name="loginPassword">Contraseña</string>
     <string name="loginEmail">Email</string>
     <string name="navigation_drawer_open">DrawerOpen\n</string>
@@ -75,7 +75,7 @@
     <string name="usuarios">Usuarios</string>
     <string name="olvid_mi_contrase_a">Olvidé mi contraseña</string>
     <string name="acceder">Acceder</string>
-    <string name="bienvenid">Bienvenid@</string>
+    <string name="bienvenid">Mis Rutas</string>
     <string name="mis_rutas">Mis Rutas</string>
     <string name="archivar_ruta">Archivar Ruta</string>
     <string name="detalles">Detalles</string>
