@@ -14,8 +14,8 @@ class AdminHomeViewModel: ViewModel() {
         return withContext(Dispatchers.IO) {
             val db = FirebaseFirestore.getInstance()
             val userId = FirebaseAuth.getInstance().currentUser?.email
-            var allHistoryRoutes = listOf<Route>()
-            var adminHistoryRoutes = mutableListOf<Route>()
+            val allHistoryRoutes: List<Route>
+            val adminHistoryRoutes = mutableListOf<Route>()
             if (userId != null) {
                 val routeDocuments = db.collection("archived_routes").get().await()
                 allHistoryRoutes = routeDocuments.toObjects(Route::class.java)
@@ -23,7 +23,6 @@ class AdminHomeViewModel: ViewModel() {
                 for (route in allHistoryRoutes){
 
                         adminHistoryRoutes.add(route)
-                        Log.i("UserDataViewModel", "userRoute = $adminHistoryRoutes")
 
                 }
 

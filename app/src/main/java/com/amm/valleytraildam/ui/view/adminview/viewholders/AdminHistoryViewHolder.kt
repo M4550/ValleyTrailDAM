@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel.adminviewmodel
+package com.amm.valleytraildam.ui.view.adminview.viewholders
 
 import android.view.LayoutInflater
 import android.view.View

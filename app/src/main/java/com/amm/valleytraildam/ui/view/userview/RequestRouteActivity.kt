@@ -17,7 +17,7 @@ import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityRequestRouteBinding
 import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.viewmodel.userviewmodel.AddRequestedRoute
+import com.amm.valleytraildam.data.AddRequestedRoute
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject

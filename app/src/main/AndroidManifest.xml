@@ -20,7 +20,7 @@
         android:theme="@style/Theme.ValleyTrailDAM"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".ui.view.adminview.AdminAddRoute"
+            android:name=".ui.view.adminview.AdminAddRouteActivity"
             android:exported="false" />
         <activity
             android:name=".ui.view.adminview.AdminRouteDetailsActivity"

@@ -2,9 +2,8 @@ package com.amm.valleytraildam.ui.view.mainview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityLoginBinding
-import com.amm.valleytraildam.ui.viewmodel.Login
+import com.amm.valleytraildam.data.Login
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

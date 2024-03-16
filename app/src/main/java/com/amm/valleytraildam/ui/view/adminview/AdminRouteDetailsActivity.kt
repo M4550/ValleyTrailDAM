@@ -14,12 +14,11 @@ import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityRouteDetailsBinding
 import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.model.User
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminUsersAdapter
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminUsersViewHolder
+import com.amm.valleytraildam.ui.view.adminview.adapters.AdminUsersAdapter
+import com.amm.valleytraildam.ui.view.adminview.viewholders.AdminUsersViewHolder
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await

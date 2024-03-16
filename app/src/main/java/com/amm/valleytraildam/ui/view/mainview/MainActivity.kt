@@ -2,7 +2,6 @@ package com.amm.valleytraildam.ui.view.mainview
 
 import android.app.Activity
 import android.content.ContentValues.TAG
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,12 +9,9 @@ import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityMainBinding
-import com.amm.valleytraildam.ui.view.adminview.AdminHomeActivity
 import com.amm.valleytraildam.ui.view.userview.AvailableRoutesActivity
-import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
-import com.amm.valleytraildam.ui.viewmodel.AdminCheck
-import com.amm.valleytraildam.ui.viewmodel.Login
-import com.amm.valleytraildam.ui.viewmodel.SessionManager
+import com.amm.valleytraildam.data.Login
+import com.amm.valleytraildam.data.SessionManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

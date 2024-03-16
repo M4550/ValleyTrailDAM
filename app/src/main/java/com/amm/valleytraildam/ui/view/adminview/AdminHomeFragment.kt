@@ -59,7 +59,7 @@ class AdminHomeFragment : Fragment() {
         // Manejar clic en "Añadir Ruta"
         binding.btnAddRoute.setOnClickListener {
             // Iniciar actividad de añadir ruta con la fecha seleccionada
-            val intent = Intent(requireContext(), AdminAddRoute::class.java)
+            val intent = Intent(requireContext(), AdminAddRouteActivity::class.java)
             intent.putExtra("date", date)
             startActivity(intent)
         }

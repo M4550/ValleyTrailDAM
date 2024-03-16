@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel.userviewmodel
+package com.amm.valleytraildam.ui.view.userview.viewholders
 
 import android.view.View
 import android.widget.TextView

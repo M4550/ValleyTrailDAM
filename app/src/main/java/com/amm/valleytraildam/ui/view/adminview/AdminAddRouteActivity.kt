@@ -11,10 +11,10 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityAdminAddRouteBinding
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminCreateRoute
+import com.amm.valleytraildam.data.AdminCreateRoute
 import java.util.Calendar
 
-class AdminAddRoute : AppCompatActivity() {
+class AdminAddRouteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAdminAddRouteBinding
     private var participantNumber = 0
@@ -94,11 +94,11 @@ class AdminAddRoute : AppCompatActivity() {
                 setPositiveButton("Sí") { _, _ ->
                     if (participantNumber != 0 && selectedTime.isNotBlank() && routeKey.isNotBlank()) {
                         AdminCreateRoute.AdminCreateRoute(
-                            date, participantNumber, routeKey, selectedTime, this@AdminAddRoute
+                            date, participantNumber, routeKey, selectedTime, this@AdminAddRouteActivity
                         )
                     } else {
                         Toast.makeText(
-                            this@AdminAddRoute,
+                            this@AdminAddRouteActivity,
                             "Todos los campos deben estar cubiertos",
                             Toast.LENGTH_SHORT
                         ).show()

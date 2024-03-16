@@ -1,14 +1,13 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.data
 
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import androidx.core.content.ContextCompat.getString
 import androidx.core.content.ContextCompat.startActivity
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.ui.view.adminview.AdminHomeActivity
-import com.amm.valleytraildam.ui.view.mainview.LoginActivity
 import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
+import com.amm.valleytraildam.utils.AdminCheck
 
 class SessionManager {
     companion object {

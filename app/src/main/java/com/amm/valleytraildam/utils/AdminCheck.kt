@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.ui.viewmodel
+package com.amm.valleytraildam.utils
 
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore

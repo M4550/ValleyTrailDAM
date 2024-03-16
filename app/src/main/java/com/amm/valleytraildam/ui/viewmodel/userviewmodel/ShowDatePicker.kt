@@ -5,7 +5,7 @@ import android.content.Context
 import android.icu.text.SimpleDateFormat
 import android.view.View
 import android.widget.Toast
-import com.amm.valleytraildam.ui.viewmodel.HideKeyboard
+import com.amm.valleytraildam.utils.HideKeyboard
 import java.util.Calendar
 import java.util.Locale
 
@@ -32,7 +32,7 @@ class ShowDatePicker {
                     onDateSelected.invoke(formattedDate)
 
                     HideKeyboard()
-                    context?.let { HideKeyboard.hideKeyboard(view) }
+                    context.let { HideKeyboard.hideKeyboard(view) }
                     Toast.makeText(
                         context,
                         "Fecha seleccionada: $formattedDate",

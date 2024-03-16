@@ -11,8 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amm.valleytraildam.databinding.FragmentAdminHistoryBinding
 import com.amm.valleytraildam.model.Route
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminHistoryAdapter
-import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminHistoryViewHolder
+import com.amm.valleytraildam.ui.view.adminview.adapters.AdminHistoryAdapter
+import com.amm.valleytraildam.ui.view.adminview.viewholders.AdminHistoryViewHolder
 import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminHomeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
