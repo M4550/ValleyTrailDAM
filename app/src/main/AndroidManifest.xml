@@ -23,7 +23,7 @@
             android:name=".ui.view.adminview.AdminAddRoute"
             android:exported="false" />
         <activity
-            android:name=".ui.view.adminview.AdminRouteDetails"
+            android:name=".ui.view.adminview.AdminRouteDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.view.userview.HomeRouteActivity"

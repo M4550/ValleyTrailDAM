@@ -1,5 +1,6 @@
 package com.amm.valleytraildam.ui.view.userview
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.FragmentUserHomeBinding
 import com.amm.valleytraildam.model.Route
 import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserHomeViewModel
@@ -15,6 +17,10 @@ import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserRoutesAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+
+
+
+
 class UserHomeFragment : Fragment() {
     private lateinit var binding : FragmentUserHomeBinding
     private lateinit var viewModel: UserHomeViewModel
@@ -23,7 +29,14 @@ class UserHomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentUserHomeBinding.inflate(inflater, container, false)
+
+
+
+
+
+
         return binding.root
     }
 

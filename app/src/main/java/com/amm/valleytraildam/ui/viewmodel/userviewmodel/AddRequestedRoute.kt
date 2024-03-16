@@ -112,7 +112,7 @@ class AddRequestedRoute {
             Log.d("RequestRouteActivity", "userEmail: $userEmail")
             Log.d("RequestRouteActivity", "date: $date")
             db.collection("users").document(userEmail).update(
-                "addedRoutes", FieldValue.arrayUnion(date)
+                "currentRoutes", FieldValue.arrayUnion(date)
             )
 
         }

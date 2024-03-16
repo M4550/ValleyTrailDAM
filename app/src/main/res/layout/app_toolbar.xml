@@ -23,6 +23,7 @@
 
             <ImageButton
                 android:clickable="true"
+                android:focusable="true"
                 android:id="@+id/imIconToolbar"
                 android:src="@drawable/ic_menu"
                 android:layout_width="80dp"

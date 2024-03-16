@@ -83,7 +83,7 @@ class AdminHomeFragment : Fragment() {
         // Manejar clic en "Detalles"
         binding.btnDetails.setOnClickListener {
             // Mostrar detalles de la ruta activa para la fecha seleccionada
-            val intent = Intent(requireContext(), AdminRouteDetails::class.java)
+            val intent = Intent(requireContext(), AdminRouteDetailsActivity::class.java)
             intent.putExtra("date", activeRoute!!.date)
             intent.putExtra("isActive", true)
             startActivity(intent)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/userDataFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,104 +15,126 @@
         android:layout_height="match_parent">
 
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_account"
-            android:layout_gravity="center"
-            app:tint="@color/md_theme_dark_inversePrimary"/>
-
-        <TextView
-            android:id="@+id/userName"
-            android:textAlignment="center"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:maxLines="1"
-            android:text="Nombre"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/userSurname"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:maxLines="1"
-            android:text="Apellido"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/userAddress"
-            android:layout_width="match_parent"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:maxLines="1"
-            android:text="Dirección"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/userPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="16dp"
-            android:maxLines="1"
-            android:text="Teléfono"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/userNif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textAlignment="center"
-            android:maxLines="1"
-            android:text="DNI"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/userEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:maxLines="1"
-            android:textAlignment="center"
-            android:text="Email"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_account"
+                app:tint="@color/md_theme_dark_inversePrimary" />
+
+            <EditText
+                android:enabled="false"
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                tools:text="@string/registerName"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:enabled="false"
+
+                android:id="@+id/userSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                tools:text="@string/registerSurname"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:enabled="false"
+
+                android:id="@+id/userAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="2"
+                tools:text="@string/registerAddress"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:enabled="false"
+
+                android:id="@+id/userPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                tools:text="@string/registerPhone"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:enabled="false"
+
+                android:id="@+id/userNif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                tools:text="@string/registerNif"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:enabled="false"
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:maxLines="1"
+                tools:text="@string/registerEmail"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/logoutBtn"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="40dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/logouttext"
-            android:textSize="20sp"
-            />
+            android:textSize="16sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/editar_perfil"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

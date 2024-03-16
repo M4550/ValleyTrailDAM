@@ -49,8 +49,10 @@ class AdminHistoryFragment : Fragment(), AdminHistoryViewHolder.OnRouteClickList
 
     override fun onRouteClick(route: Route) {
         route.date?.let { Log.i("route", it) }
-        val intent = Intent(activity, AdminRouteDetails::class.java)
+        val intent = Intent(activity, AdminRouteDetailsActivity::class.java)
         intent.putExtra("date", route.date)
+        intent.putExtra("isActive", route.isActive)
+
         startActivity(intent)
     }
 }

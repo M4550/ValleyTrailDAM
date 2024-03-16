@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.adminview.AdminRouteDetails">
+    tools:context=".ui.view.adminview.AdminRouteDetailsActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -12,52 +12,109 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:elevation="20dp"
-        app:cardCornerRadius="20dp"
         android:background="@color/alpha"
         android:backgroundTint="@color/md_theme_dark_onPrimaryContainer"
+        android:elevation="20dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
+            android:layout_margin="16dp">
 
-            <TextView
+            <Button
+                android:id="@+id/editBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/editar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
                 android:id="@+id/tvDate"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
+                android:enabled="false"
                 android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Fecha" />
 
 
-            <TextView
+            <EditText
                 android:id="@+id/tvName"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
+                android:enabled="false"
                 android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDate"
                 tools:text="Nombre" />
 
 
-            <TextView
+            <EditText
                 android:id="@+id/tvTime"
-                android:layout_width="match_parent"
+
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
+                android:enabled="false"
                 android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
                 tools:text="Hora" />
+
+
+            <EditText
+                android:id="@+id/etMaxParticipants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="number"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvMaxParticipants"
+                app:layout_constraintStart_toEndOf="@id/tvMaxParticipants"
+                app:layout_constraintTop_toTopOf="@id/tvMaxParticipants"
+                tools:text="10" />
+
+
+            <TextView
+                android:id="@+id/tvMaxParticipants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:text="@string/max_participantes"
+                android:textSize="20sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
 
             <TextView
                 android:id="@+id/tvParticipants"
-                android:layout_width="match_parent"
+
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
                 android:textSize="20sp"
-                tools:text="Participantes" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMaxParticipants"
+                android:text="Participantes" />
+
+            <EditText
+                android:id="@+id/etParticipants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvParticipants"
+                app:layout_constraintStart_toEndOf="@id/tvParticipants"
+                app:layout_constraintTop_toTopOf="@id/tvParticipants"
+                tools:text="0" />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -67,10 +124,11 @@
                 android:layout_marginVertical="16dp"
                 android:textAlignment="center"
                 android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/tvParticipants"
                 tools:text="Fecha" />
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 

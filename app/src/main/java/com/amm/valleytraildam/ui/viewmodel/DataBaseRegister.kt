@@ -34,7 +34,7 @@ class DataBaseRegister {
                                         "phone" to user.phone,
                                         "password" to user.password,
                                         "surname" to user.surname,
-                                        "date" to user.bornDate,
+                                        "bornDate" to user.bornDate,
                                         "isAdmin" to false
                                     )
                                 )

@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Valley Trail</string>
     <string name="registerBtn">Register</string>
-    <string name="enterBtn">Enter</string>
-    <string name="enterNoLoginBtn">Enter without register</string>
+    <string name="enterBtn">Log in</string>
+    <string name="enterNoLoginBtn">Continue as guest</string>
     <string name="registerName">Name</string>
     <string name="registerSurname">Surname</string>
     <string name="registerPhone">Phone</string>
@@ -88,4 +88,8 @@
     <string name="libre">Free</string>
     <string name="tel">Tel: %1$s</string>
     <string name="dni">ID Card: %1$s</string>
+    <string name="olvid_su_contrase_a">Forgot your password?</string>
+    <string name="continuar_con_google">Google Login</string>
+
+    <string name="prefs_file">com.amm.valleytraildam.PRREFERENCE_FILE_KEY</string>
 </resources>

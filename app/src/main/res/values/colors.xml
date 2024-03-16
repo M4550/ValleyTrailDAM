@@ -20,7 +20,7 @@
     <color name="md_theme_light_errorContainer">#FFDAD6</color>
     <color name="md_theme_light_onError">#FFFFFF</color>
     <color name="md_theme_light_onErrorContainer">#410002</color>
-    <color name="md_theme_light_background">#E1D4FFC2</color>
+    <color name="md_theme_light_background">#B9D4FFC2</color>
     <color name="md_theme_light_onBackground">#1B1C18</color>
     <color name="md_theme_light_surface">#FDFCF5</color>
     <color name="md_theme_light_onSurface">#1B1C18</color>

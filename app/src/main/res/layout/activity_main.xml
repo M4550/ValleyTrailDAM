@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_dark_onSecondaryContainer"
+    android:background="@color/md_theme_light_background"
+
     tools:context=".ui.view.mainview.MainActivity">
 
     <ImageView
         android:id="@+id/mainLayout"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/im_logo_png"
         app:layout_constraintBottom_toTopOf="@id/welcomeText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,54 +25,118 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/welcome"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/lLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mainLayout" />
 
 
-    <LinearLayout
-        android:id="@+id/lLayout"
+    <Button
+        android:id="@+id/enterBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/enterBtn"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/welcomeText">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/enterBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:text="@string/enterBtn"
-            android:textSize="18sp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/enterNoLoginBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:text="@string/enterNoLoginBtn"
-
-            android:textSize="18sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/registerBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/registerBtn"
-            android:textSize="18sp" />
+    </Button>
 
 
-    </LinearLayout>
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/log_btn"
+        app:layout_constraintBottom_toBottomOf="@id/enterBtn"
+        app:layout_constraintStart_toStartOf="@id/enterBtn"
+        app:layout_constraintTop_toTopOf="@id/enterBtn" />
+
+
+    <Button
+        android:id="@+id/enterNoLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/enterNoLoginBtn"
+        android:textSize="18sp"
+
+        app:layout_constraintTop_toBottomOf="@id/enterBtn" />
+
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/stealth_icon"
+        app:layout_constraintBottom_toBottomOf="@id/enterNoLoginBtn"
+        app:layout_constraintStart_toStartOf="@id/enterNoLoginBtn"
+        app:layout_constraintTop_toTopOf="@id/enterNoLoginBtn" />
+
+
+    <Button
+        android:id="@+id/googleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/md_theme_dark_onSurfaceVariant"
+        android:text="@string/continuar_con_google"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/enterNoLoginBtn" />
+
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/g_logo"
+        app:layout_constraintBottom_toBottomOf="@id/googleBtn"
+        app:layout_constraintStart_toStartOf="@id/googleBtn"
+        app:layout_constraintTop_toTopOf="@id/googleBtn" />
+
+    <TextView
+        android:id="@+id/registerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/registerBtn"
+        android:textAlignment="center"
+        android:textColor="#430073"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/googleBtn" />
+
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/olvid_su_contrase_a"
+        android:textAlignment="center"
+        android:textColor="@color/md_theme_dark_onPrimary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/registerBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

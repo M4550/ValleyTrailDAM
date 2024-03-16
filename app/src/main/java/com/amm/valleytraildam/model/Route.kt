@@ -7,5 +7,6 @@ data class Route (
     var routeName: String? = "",
     var time : String? = "10:00 Horas",
     var users: ArrayList<String>? = arrayListOf(""),
-    var isBloqued: Boolean? = false
+    var isBloqued: Boolean? = false,
+    var isActive: Boolean? = true
 )

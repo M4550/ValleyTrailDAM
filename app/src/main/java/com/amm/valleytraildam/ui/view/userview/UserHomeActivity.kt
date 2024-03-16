@@ -1,5 +1,6 @@
 package com.amm.valleytraildam.ui.view.userview
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,7 +20,11 @@ import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityUserHomeBinding
 
 import com.amm.valleytraildam.databinding.AppToolbarBinding
+import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserDataViewModel
 import com.google.android.material.navigation.NavigationView
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+
 
 class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawer: DrawerLayout
@@ -33,6 +39,63 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         binding = ActivityUserHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         bindingToolbar = AppToolbarBinding.inflate(layoutInflater)
+
+
+
+
+
+        val bundle = intent?.extras
+        val email = bundle?.getString("email")
+        val provider = bundle?.getString("provider")
+
+        // Guardado de datos
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putString("email", email)
+        editor.putString("provider", provider)
+        editor.apply()
+
+        MainScope().launch {
+            if (UserDataViewModel.getUserData()?.nif.isNullOrBlank() ||
+                UserDataViewModel.getUserData()?.address.isNullOrBlank() ||
+                UserDataViewModel.getUserData()?.phone.isNullOrBlank() ||
+                UserDataViewModel.getUserData()?.name.isNullOrBlank() ||
+                UserDataViewModel.getUserData()?.surname.isNullOrBlank()) {
+
+                val builder = AlertDialog.Builder(this@UserHomeActivity)
+                builder.setTitle(getString(R.string.datos_personales_requeridos))
+                builder.setMessage(getString(R.string.por_favor_complete_sus_datos_personales_para_poder_contratar_una_ruta))
+
+                builder.setPositiveButton(getString(R.string.completar)) { dialog, _ ->
+                    dialog.dismiss()
+                    val userDataFragment = UserDataFragment()
+
+                    // Reemplaza el fragmento actual con UserDataFragment
+                    supportFragmentManager.beginTransaction()
+                        .replace(binding.fragmentContainer.id, userDataFragment).commit()
+                }
+
+                builder.setNegativeButton(getString(R.string.m_s_tarde)) { dialog, _ ->
+
+
+                    dialog.dismiss()
+                }
+                builder.show()
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         drawer = binding.drawerLayout
         navigationView = binding.navView
@@ -172,8 +235,7 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     }
 
     private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(binding.fragmentContainer.id, fragment)
+        supportFragmentManager.beginTransaction().replace(binding.fragmentContainer.id, fragment)
             .commit()
     }
 
