@@ -17,8 +17,8 @@ class UserHomeViewModel : ViewModel() {
         return withContext(Dispatchers.IO) {
             val db = FirebaseFirestore.getInstance()
             val userId = FirebaseAuth.getInstance().currentUser?.email
-            var allRoutes: List<Route>
-            var userRoutes = mutableListOf<Route>()
+            val allRoutes: List<Route>
+            val userRoutes = mutableListOf<Route>()
             if (userId != null) {
                 val routeDocuments = db.collection("active_routes").get().await()
                 allRoutes = routeDocuments.toObjects(Route::class.java)

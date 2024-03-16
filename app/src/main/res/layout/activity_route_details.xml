@@ -33,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:inputType="date"
                 android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,6 +46,7 @@
 
 
             <EditText
+                android:inputType="text"
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +60,7 @@
 
             <EditText
                 android:id="@+id/tvTime"
-
+                android:inputType="time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
@@ -103,9 +105,10 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMaxParticipants"
-                android:text="Participantes" />
+                android:text="@string/participantes_ruta" />
 
             <EditText
+                android:inputType="number"
                 android:id="@+id/etParticipants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

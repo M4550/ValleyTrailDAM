@@ -16,6 +16,7 @@ import com.amm.valleytraildam.ui.view.adminview.viewholders.AdminHistoryViewHold
 import com.amm.valleytraildam.ui.viewmodel.adminviewmodel.AdminHomeViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 class AdminHistoryFragment : Fragment(), AdminHistoryViewHolder.OnRouteClickListener  {
@@ -35,7 +36,7 @@ class AdminHistoryFragment : Fragment(), AdminHistoryViewHolder.OnRouteClickList
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[AdminHomeViewModel::class.java]
 
-        GlobalScope.launch(Dispatchers.Main) {
+        MainScope().launch(Dispatchers.Main) {
             val adminHistoryRouteList = viewModel.getHistoryRoutes()
             initRecyclerView(adminHistoryRouteList)
         }

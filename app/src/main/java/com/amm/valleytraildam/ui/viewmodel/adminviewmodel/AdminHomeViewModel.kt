@@ -1,6 +1,5 @@
 package com.amm.valleytraildam.ui.viewmodel.adminviewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.amm.valleytraildam.model.Route
 import com.google.firebase.auth.FirebaseAuth

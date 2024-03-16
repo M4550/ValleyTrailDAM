@@ -92,4 +92,16 @@
     <string name="continuar_con_google">Google Login</string>
 
     <string name="prefs_file">com.amm.valleytraildam.PRREFERENCE_FILE_KEY</string>
+    <string name="entre_el_sera_y_el_cinca">Entre el Ésera y el Cinca</string>
+    <string name="m_s_tarde">Later</string>
+    <string name="completar">Complete</string>
+    <string name="por_favor_complete_sus_datos_personales_para_poder_contratar_una_ruta">Please, complete your personal information</string>
+    <string name="datos_personales_requeridos">Personal info requested</string>
+    <string name="editar_perfil">Edit profile</string>
+    <string name="guardar">Save</string>
+    <string name="editar">Edit</string>
+    <string name="max_participantes">Max Participants</string>
+    <string name="ruta_con_plazas_libres">Route with %1$s free places</string>
+    <string name="participantes_ruta">Participants</string>
+    <string name="default_web_client_id">137872133912-gcovgcfck5vqtk8hqnqbd4c89l4mcg2h.apps.googleusercontent.com</string>
 </resources>

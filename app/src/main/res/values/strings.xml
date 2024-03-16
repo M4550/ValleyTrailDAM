@@ -101,4 +101,7 @@
     <string name="guardar">Guardar</string>
     <string name="editar">Editar</string>
     <string name="max_participantes">Max Participantes</string>
+    <string name="entre_el_sera_y_el_cinca">Entre el Ésera y el Cinca</string>
+    <string name="ruta_con_plazas_libres">Ruta con %1$s plazas libres</string>
+    <string name="participantes_ruta">Participantes</string>
 </resources>

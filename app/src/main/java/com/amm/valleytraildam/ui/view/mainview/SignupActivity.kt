@@ -24,7 +24,7 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val calendar: Calendar = Calendar.getInstance()
+        Calendar.getInstance()
         supportActionBar?.hide()
 
         binding.datePickerBtn.setOnClickListener {

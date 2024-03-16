@@ -15,7 +15,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.findFragment
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityUserHomeBinding
 
@@ -32,7 +31,6 @@ class UserHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private lateinit var binding: ActivityUserHomeBinding
     private lateinit var iconToolbar: ImageButton
     private lateinit var bindingToolbar: AppToolbarBinding
-    val fragmentManager = supportFragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

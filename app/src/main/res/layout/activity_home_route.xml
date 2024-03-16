@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:backgroundTint="@color/md_theme_dark_inversePrimary"
-            android:text="Reservar"
+            android:text="@string/reservar"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"

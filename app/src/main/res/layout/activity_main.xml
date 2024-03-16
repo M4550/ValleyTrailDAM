@@ -102,7 +102,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
-        android:src="@drawable/g_logo"
+        android:src="@mipmap/g_logo"
         app:layout_constraintBottom_toBottomOf="@id/googleBtn"
         app:layout_constraintStart_toStartOf="@id/googleBtn"
         app:layout_constraintTop_toTopOf="@id/googleBtn" />

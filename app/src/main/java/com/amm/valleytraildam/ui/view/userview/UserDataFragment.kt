@@ -16,6 +16,7 @@ import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserDataViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 class UserDataFragment : Fragment() {
@@ -61,7 +62,7 @@ class UserDataFragment : Fragment() {
         }
 
 
-        GlobalScope.launch(Dispatchers.Main) {
+        MainScope().launch(Dispatchers.Main) {
             Log.i("UserDataFragment", "GlobalScope.launch")
             val user = UserDataViewModel.getUserData()
             Log.i("UserDataFragment", "user = $user")
@@ -108,7 +109,7 @@ class UserDataFragment : Fragment() {
         val newName = binding.userName.text.toString()
         val newSurname = binding.userSurname.text.toString()
 
-        GlobalScope.launch(Dispatchers.Main) {
+        MainScope().launch(Dispatchers.Main) {
             UserDataViewModel.saveUserData(newAddress, newNif, newPhone, newName, newSurname)
             disableFieldsForEditing()
             binding.editProfileBtn.text = getString(R.string.editar_perfil)

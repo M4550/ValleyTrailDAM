@@ -13,6 +13,7 @@ import com.amm.valleytraildam.ui.viewmodel.userviewmodel.UserHomeViewModel
 import com.amm.valleytraildam.ui.view.userview.adapters.UserRoutesAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 
@@ -43,7 +44,7 @@ class UserHomeFragment : Fragment() {
         viewModel = ViewModelProvider(this)[UserHomeViewModel::class.java]
 
 
-        GlobalScope.launch(Dispatchers.Main) {
+         MainScope().launch(Dispatchers.Main) {
             routeList = viewModel.getUserRoutes()
 
             fun initrecyclerView(){

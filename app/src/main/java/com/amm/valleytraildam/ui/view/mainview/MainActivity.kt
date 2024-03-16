@@ -20,7 +20,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
-    private val GOOGLE_SIGN_IN = 100
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,14 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-
-// PARA PRUEBAS MIAS
-
-//       val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-//       val editor = prefs.edit()
-//       editor.clear()
-//        editor.apply()
-
 
         SessionManager.checkSession(this)
 

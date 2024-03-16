@@ -32,7 +32,6 @@ class RequestRouteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRequestRouteBinding
     private var participantNumber: Int = 1
     private var date: String = ""
-    private var isAvailable: Boolean = false
     private lateinit var user: User
     private var normalizedEmail = ""
     private var dateMaxParticipants = 10
@@ -126,7 +125,8 @@ class RequestRouteActivity : AppCompatActivity() {
                             } else {
                                 val freePlaces =
                                     activeRoute.maxParticipants!! - activeRoute.participants!!
-                                binding.tvAvailability.text = "Ruta con $freePlaces plazas libres"
+                                binding.tvAvailability.text =
+                                    getString(R.string.ruta_con_plazas_libres, freePlaces.toString())
                                 binding.tvAvailability.setBackgroundColor(Color.YELLOW)
                                 binding.btnSave.visibility = View.VISIBLE
                                 dateMaxParticipants = activeRoute.maxParticipants!!
