@@ -42,6 +42,7 @@ class UserDataViewModel : ViewModel() {
 
                 val userRef = db.collection("users").document(userEmail)
                 val userData = hashMapOf(
+                    "email" to userEmail,
                     "address" to newAddress,
                     "nif" to newNif,
                     "phone" to newPhone,

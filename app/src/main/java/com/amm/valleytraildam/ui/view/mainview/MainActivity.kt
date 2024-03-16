@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import com.amm.valleytraildam.R
+import com.amm.valleytraildam.data.DataBaseRegister
 import com.amm.valleytraildam.databinding.ActivityMainBinding
 import com.amm.valleytraildam.ui.view.userview.AvailableRoutesActivity
 import com.amm.valleytraildam.data.Login
@@ -80,24 +81,7 @@ class MainActivity : AppCompatActivity() {
             Login.loginUserWithGoogle(idToken, this)
 
             // Guardar los datos del usuario en Firestore
-            val db = FirebaseFirestore.getInstance()
-
-
-            email?.let { email ->
-                val userMap = mapOf(
-                    "name" to name,
-                    "isAdmin" to false
-                    // Puedes agregar otros campos aquí
-                )
-
-                db.collection("users").document(email).update(userMap)
-                    .addOnSuccessListener {
-                        Log.d(TAG, "Campos de usuario actualizados correctamente en Firestore")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error al actualizar campos de usuario en Firestore", e)
-                    }
-            }
+            DataBaseRegister.registerGoogleUser(email!!, name!!, this)
 
         } catch (e: ApiException) {
             // Error al iniciar sesión con Google

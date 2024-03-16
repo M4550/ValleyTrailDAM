@@ -1,5 +1,7 @@
 package com.amm.valleytraildam.data
 
+import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -12,20 +14,18 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class DataBaseRegister {
     companion object {
-        fun registerUser(user: User, context: Context ) {
+        fun registerUser(user: User, context: Context) {
 
             val db = FirebaseFirestore.getInstance()
 
 
-            user.email?.let { email->
+            user.email?.let { email ->
                 user.password?.let { password ->
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(
-                        email,
-                        password
+                        email, password
                     ).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            db.collection("users").document(user.email!!)
-                                .set(
+                            db.collection("users").document(user.email!!).set(
                                     hashMapOf(
                                         "nif" to user.nif,
                                         "email" to user.email,
@@ -44,25 +44,59 @@ class DataBaseRegister {
                             startActivity(context, intent, null)
 
                         } else {
-
-                            Log.e("Error", it.exception.toString())
-                            val exception = it.exception.toString()
-                            Toast.makeText(
-                                context,
-                                "Error: $exception",
-                                Toast.LENGTH_LONG
-                            )
+                            Toast.makeText(context, "Error al crear usuario", Toast.LENGTH_LONG)
                                 .show()
+
                         }
 
                     }
                 }
             }
 
-
-
-
-
         }
+
+        fun registerGoogleUser(email: String, name: String, context: Context) {
+            val db = FirebaseFirestore.getInstance()
+
+            // Verificar si el usuario ya está registrado
+            db.collection("users").document(email).get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        // El usuario ya está registrado, no es necesario volver a registrar
+                        Log.d(TAG, "El usuario ya está registrado en la base de datos")
+                    } else {
+                        // El usuario no está registrado, registrarlos ahora
+                        val userMap = mapOf(
+                            "nif" to "",
+                            "email" to email,
+                            "address" to "",
+                            "name" to name,
+                            "phone" to "",
+                            "password" to "",
+                            "surname" to "",
+                            "bornDate" to "",
+                            "isAdmin" to false
+                        )
+
+                        // Crear un nuevo documento de usuario en la colección "users"
+                        db.collection("users").document(email).set(userMap)
+                            .addOnSuccessListener {
+                                Log.d(TAG, "Usuario registrado correctamente en Firestore")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e(TAG, "Error al registrar usuario en Firestore", e)
+                            }
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Log.e(TAG, "Error al verificar la existencia del usuario en Firestore", e)
+                }
+        }
+
+
+
+
     }
+
+
 }

@@ -9,10 +9,12 @@ import com.amm.valleytraildam.model.Route
 class UserRoutesViewHolder(itemView: View) : ViewHolder(itemView) {
 
 
-    val routeDate: TextView = itemView.findViewById(R.id.rvTextDate)
-
+    private val routeDate: TextView = itemView.findViewById(R.id.rvTextDate)
+    private val routeTime: TextView = itemView.findViewById(R.id.rvTextTime)
+    private val routeTitle: TextView = itemView.findViewById(R.id.rvTextTitle)
     fun render(route: Route) {
         routeDate.text = route.date
-
+        routeTime.text = route.time
+        routeTitle.text = route.routeName
     }
 }
