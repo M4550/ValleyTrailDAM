@@ -9,7 +9,7 @@ import com.amm.valleytraildam.databinding.ActivityRegisterBinding
 import com.amm.valleytraildam.model.User
 import com.amm.valleytraildam.data.CheckUserInfo
 import com.amm.valleytraildam.data.DataBaseRegister
-import com.amm.valleytraildam.utils.HideKeyboard
+import com.amm.valleytraildam.data.utils.HideKeyboard
 import com.amm.valleytraildam.ui.viewmodel.userviewmodel.ShowDatePicker
 import java.util.Calendar
 

@@ -5,7 +5,7 @@ import android.content.Context
 import android.icu.text.SimpleDateFormat
 import android.view.View
 import android.widget.Toast
-import com.amm.valleytraildam.utils.HideKeyboard
+import com.amm.valleytraildam.data.utils.HideKeyboard
 import java.util.Calendar
 import java.util.Locale
 

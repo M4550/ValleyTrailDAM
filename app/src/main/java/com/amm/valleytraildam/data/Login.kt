@@ -5,7 +5,7 @@ import android.content.Intent
 import android.widget.Toast
 import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
 import com.amm.valleytraildam.ui.view.adminview.AdminHomeActivity
-import com.amm.valleytraildam.utils.AdminCheck
+import com.amm.valleytraildam.data.utils.AdminCheck
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 

@@ -11,7 +11,7 @@ import com.amm.valleytraildam.R
 import com.amm.valleytraildam.databinding.ActivityMainBinding
 import com.amm.valleytraildam.ui.view.userview.AvailableRoutesActivity
 import com.amm.valleytraildam.data.Login
-import com.amm.valleytraildam.data.SessionManager
+import com.amm.valleytraildam.data.utils.SessionManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

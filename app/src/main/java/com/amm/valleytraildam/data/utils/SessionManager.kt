@@ -1,4 +1,4 @@
-package com.amm.valleytraildam.data
+package com.amm.valleytraildam.data.utils
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,6 @@ import androidx.core.content.ContextCompat.startActivity
 import com.amm.valleytraildam.R
 import com.amm.valleytraildam.ui.view.adminview.AdminHomeActivity
 import com.amm.valleytraildam.ui.view.userview.UserHomeActivity
-import com.amm.valleytraildam.utils.AdminCheck
 
 class SessionManager {
     companion object {
