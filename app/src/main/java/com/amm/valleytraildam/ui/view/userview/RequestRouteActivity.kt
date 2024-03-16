@@ -139,7 +139,7 @@ class RequestRouteActivity : AppCompatActivity() {
 
 
                 }.addOnFailureListener {
-                    Exception("Error getting documents: ", it)
+                    throw Exception("Error getting documents: ", it)
                 }
 
 
